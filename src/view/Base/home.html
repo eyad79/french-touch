@@ -1,0 +1,26 @@
+<h1><?= $title ?></h1>
+
+
+
+
+<?php foreach($avis as $a) : ?>
+
+<div>
+    <p style="color:red"><?= $a['nom'] ?></p>
+    <p style="color:blue"><?= $a['date'] ?></p>
+    <p style="color:green"><?= $a['content'] ?></p>
+    
+    <div>
+
+        <div style="float: left">Note :</div>
+        <?php  for($i = 0; $i < $a['note']; $i++) : ?>
+        <div style="float: left" class="star">*</div>
+        <?php endfor; ?>
+        <div style="clear: both"></div>
+        
+    </div>
+
+    <hr/>
+</div>
+
+<?php endforeach; ?>
