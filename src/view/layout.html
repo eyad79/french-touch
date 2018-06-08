@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title><?= $title ?></title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+       
+        <link rel="stylesheet" href="<?= $url ?>styles/fa-svg-with-js.css">
+        <link rel="stylesheet" href="<?= $url ?>styles/mainStyle.css">
+        <link rel="stylesheet" href="<?= $url ?>styles/styleContact.css">
+
+    </head>
+    <body>
+        <nav class="nav nav-pills nav-justified">
+            <ul>
+<!--            <li><a href="<?= $url ?>base/accueil">Accueil</a></li>-->
+                <li><a href="<?= $url ?>base/concept">Concept</a></li>
+                <li><a href="<?= $url ?>base/menu">Menu</a></li>
+                <li><a href="<?= $url ?>base/presse">presse</a></li>
+                <li><a href="<?= $url ?>base/devenir_franchise">Devenire franchisé</a></li>
+                <li><a href="<?= $url ?>base/reserver">Réserver</a></li>
+                <li><a href="<?= $url ?>base/contact">Contact</a></li>
+                
+            </ul>
+        </nav>
+    -- HAUT DU SITE -- 
+        
+        
+    <?php echo $content  ?>
+    
+    
+    
+    -- BAS DU SITE
+        <footer> footer </footer>
+        <!-- Jquery -->
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+        <!--Bootstrap -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+        <!--custom -->
+        <script src="<?= $url ?>js/customContact.js"></script>
+        <script src="<?= $url ?>js/mainJS.js"></script>
+        <!-- font_js -->
+        <script src="<?= $url ?>js/fontawesome-all.js"></script>
+        
+    </body>
+</html>
