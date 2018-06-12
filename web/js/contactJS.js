@@ -198,5 +198,121 @@ $(function () {
    });
 
 
+
+    /* ---- Reservation -------- */
+
+    var nomRError   	= true,
+        prenomRError  	= true,
+        cellError   	= true,
+        dateError  		= true,
+        noPerError  	= true,
+        heureError  	= true,
+        msgRError    	= true;
+
+    
+
+    $('.nomR').blur(function () {
+
+        if ($(this).val().length <= 2) {
+            $(this).css('border', '1px solid #f00').parent().find('.custom-alert').fadeIn(500).end().find('.asterisx').fadeIn(500);
+            nomRError = true;
+
+        } else {
+            $(this).css('border', '1px solid #080').parent().find('.custom-alert').fadeOut(500).end().find('.asterisx').fadeOut(500);
+            nomRError = false;
+        }
+      
+    });
+
+
+    $('.prenomR').blur(function () {
+
+        if ($(this).val().length <= 2) {
+            $(this).css('border', '1px solid #f00').parent().find('.custom-alert').fadeIn(500).end().find('.asterisx').fadeIn(500);
+            prenomRError = true;
+
+        } else {
+            $(this).css('border', '1px solid #080').parent().find('.custom-alert').fadeOut(500).end().find('.asterisx').fadeOut(500);
+            prenomRError = false;
+        }
+      
+    });
+
+
+    $('.cell').blur(function () {
+
+        if ($(this).val().length <= 9) {
+            $(this).css('border', '1px solid #f00').parent().find('.custom-alert').fadeIn(500).end().find('.asterisx').fadeIn(500);
+            cellError = true;
+
+        } else {
+            $(this).css('border', '1px solid #080').parent().find('.custom-alert').fadeOut(500).end().find('.asterisx').fadeOut(500);
+            cellError = false;
+        }
+      
+    });
+
+    $('.date_reserver').blur(function () {
+
+        if ($(this).val().length <= 2) {
+            $(this).css('border', '1px solid #f00').parent().find('.custom-alert').fadeIn(500).end().find('.asterisx').fadeIn(500);
+            dateError = true;
+
+        } else {
+            $(this).css('border', '1px solid #080').parent().find('.custom-alert').fadeOut(500).end().find('.asterisx').fadeOut(500);
+            dateError = false;
+        }
+      
+    });
+
+    $('.no_perssonne').blur(function () {
+
+        if ($(this).val().length = 0) {
+            $(this).css('border', '1px solid #f00').parent().find('.custom-alert').fadeIn(500).end().find('.asterisx').fadeIn(500);
+            noPerError = true;
+
+        } else {
+            $(this).css('border', '1px solid #080').parent().find('.custom-alert').fadeOut(500).end().find('.asterisx').fadeOut(500);
+            noPerError = false;
+        }
+      
+    });
+
+    $('.heure').blur(function () {
+
+        if ($(this).val().length <= 2) {
+            $(this).css('border', '1px solid #f00').parent().find('.custom-alert').fadeIn(500).end().find('.asterisx').fadeIn(500);
+            heureError = true;
+
+        } else {
+            $(this).css('border', '1px solid #080').parent().find('.custom-alert').fadeOut(500).end().find('.asterisx').fadeOut(500);
+            heureError = false;
+        }
+      
+    });
+
+
+    $('.msgR').blur(function () {
+
+        if ($(this).val().length <= 19) {
+            $(this).css('border', '1px solid #f00').parent().find('.custom-alert').fadeIn(500).end().find('.asterisx').fadeIn(500);
+            msgRError = true;
+
+        } else {
+            $(this).css('border', '1px solid #080').parent().find('.custom-alert').fadeOut(500).end().find('.asterisx').fadeOut(500);
+            msgRError = false;
+        }
+        
+    });
+    
+    $('.reservation-form').submit(function (e) {
+        if (nomRError === true || prenomRError === true || cellError === true || dateError === true || noPerError === true || heureError === true || msgRError === true) {
+            e.preventDefault();
+            $('.nomR, .prenomR, .cell, dateError, .no_perssonne, .heure, .msgR').blur();
+        }
+        
+    });
+
+
 });
 

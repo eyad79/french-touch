@@ -1,5 +1,5 @@
 
-form {
+/*form {
     max-width: 500px;
     margin: 50px auto;
 }
@@ -52,4 +52,138 @@ form .fa-paper-plane {
 .contact-form .alert-danger {
     padding: 5px 10px !important;
     display: none;
+}*/
+
+/* -------Franchaise Vous -------- */
+/*
+.franchaise-form {
+    margin-bottom: 8px;
+    margin-top: 20px;
+}
+
+.franchaise-form .form-group {
+    position: relative; 
+    margin-bottom: 0;
+}
+.franchaise-form .asterisx {
+    position: absolute;
+    color: #b90d0d;
+    font-size: 30px;
+    right: 10px;
+    top: 0;
+}
+.franchaise-form .alert-danger {
+    padding: 5px 10px !important;
+    display: none;
+}*/
+
+
+/* -------Reservation -------- */
+/*
+.reservation-form {
+    margin-bottom: 8px;
+    margin-top: 20px;
+}
+
+.reservation-form .form-group {
+    position: relative; 
+    margin-bottom: 0;
+}
+.reservation-form .asterisx {
+    position: absolute;
+    color: #b90d0d;
+    font-size: 30px;
+    right: 10px;
+    top: 0;
+}
+.reservation-form .alert-danger {
+    padding: 5px 10px !important;
+    display: none;
+}*/
+
+
+form {
+max-width: 500px;
+margin: 50px auto;
+}
+form input, form textarea {
+margin-bottom: 20px;
+padding-left: 40px !important;
+padding-right: 20px !important;
+}
+.form-control {
+margin-bottom: 8px;
+margin-top: 20px;
+}
+h2 {
+margin-top: 30px;
+max-width: 500px;
+margin: 10px auto;
+}
+form svg {
+float: left; 
+position: absolute; 
+top:9px;
+left: 8px;
+color: #b90d0d !important;
+}
+.btn-success {
+margin-top: 20px;
+}
+form .fa-user {
+color: #999;
+}
+form .fa-envelope {
+top: 12px;
+color: #999;
+}
+form .fa-phone {
+top: 12px;
+color: #999;
+}
+form .fa-paper-plane {
+color: #fff !important;
+}
+.form-group {
+position: relative; 
+margin-bottom: 0;
+}
+.asterisx {
+position: absolute;
+color: #b90d0d;
+font-size: 30px;
+right: 10px;
+top: 0;
+}
+.alert-danger {
+padding: 5px 10px !important;
+display: none;
+}
+@font-face {
+font-family: "BebasNeue";
+src: url("../fonts/BebasNeue.ttf");
+}
+@font-face {
+font-family: "ThirstyRough";
+src: url("../fonts/ThirstyRough.otf");
+}
+.btn-block{
+font-family: 'BebasNeue', serif;
+background-image:linear-gradient(#AC2C31, #561619);
+border: none;
+}
+.title-form{
+font-family: 'BebasNeue', serif;
+font-size: 28px;
+padding: 4px;
+background-image:linear-gradient(#AC2C31, #561619);
+color: #fff;
+}
+.background-form{
+background-color: #fff;
+max-width: 500px ; 
+margin: 1px auto;
+}
+.contact-form, .franchaise-form, .reservation-form {
+padding: 0px 25px 0px 25px;
 }

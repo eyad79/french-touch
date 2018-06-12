@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 12, 2018 at 09:55 AM
+-- Generation Time: Jun 12, 2018 at 02:59 PM
 -- Server version: 10.1.31-MariaDB
 -- PHP Version: 7.2.4
 
@@ -80,7 +80,9 @@ INSERT INTO `contact` (`id_contact`, `nom`, `sujet`, `email`, `message`) VALUES
 (11, 'TEST4', 'test4', 'toto@toto.com', 'kld hgdlzkj hdzlkh qd hgdq hgqdlhj gq'),
 (12, 'TEST4', 'test4', 'toto@toto.com', 'kld hgdlzkj hdzlkh qd hgdq hgqdlhj gq'),
 (13, 'eyad', 'test5', 'eyad@eyad.com', 'lkhefjh ekj gefk gfekj gfejhfe g'),
-(14, 'eyad', 'test5', 'eyad@eyad.com', 'lkhefjh ekj gefk gfekj gfejhfe g');
+(14, 'eyad', 'test5', 'eyad@eyad.com', 'lkhefjh ekj gefk gfekj gfejhfe g'),
+(15, 'adithe', 'tzst', 'edith@edith.com', 'kjdzahg zreyu zfu kye uy'),
+(16, 'adithe', 'tzst', 'edith@edith.com', 'kjdzahg zreyu zfu kye uy');
 
 -- --------------------------------------------------------
 
@@ -108,7 +110,8 @@ INSERT INTO `franchaise` (`id_franchaise`, `nom`, `prenom`, `email`, `ville`, `n
 (2, 'basha', 'eyad', 'eyad@eyad.com', 'massy', '10mentionweb', 'oui', 'feuh iefzu hreui htriuhriopytj '),
 (3, 'basha', 'eyad', 'eyad@eyad.com', 'massy', '10mentionweb', 'non', 'iudhe fezh fzeiu hzfei ufze fzei uzeui'),
 (4, 'basha', 'eyad', 'eyad@eyad.com', 'massy', '10mentionweb', 'non', 'iudhe fezh fzeiu hzfei ufze fzei uzeui'),
-(5, 'basha', 'eyad', 'eyad@eyad.com', 'massy', '10mentionweb', 'non', 'iudhe fezh fzeiu hzfei ufze fzei uzeui');
+(5, 'basha', 'eyad', 'eyad@eyad.com', 'massy', '10mentionweb', 'non', 'iudhe fezh fzeiu hzfei ufze fzei uzeui'),
+(6, 'basha', 'eyad', 'eyad@eyad.com', 'massy', '10mentionweb', 'non', 'iudhe fezh fzeiu hzfei ufze fzei uzeui');
 
 -- --------------------------------------------------------
 
@@ -124,6 +127,33 @@ CREATE TABLE `press` (
   `date` date NOT NULL,
   `lien` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `reserver`
+--
+
+CREATE TABLE `reserver` (
+  `id_reserver` int(11) NOT NULL,
+  `nom` varchar(100) NOT NULL,
+  `prenom` varchar(100) NOT NULL,
+  `cell` int(10) NOT NULL,
+  `date_reserver` date NOT NULL,
+  `no_perssonne` varchar(10) NOT NULL,
+  `heure` varchar(100) NOT NULL,
+  `message` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `reserver`
+--
+
+INSERT INTO `reserver` (`id_reserver`, `nom`, `prenom`, `cell`, `date_reserver`, `no_perssonne`, `heure`, `message`) VALUES
+(1, 'basha', 'eyad', 2147483647, '2018-06-21', '3', '21h45', 'oiprzu\" zepiu etpiu riu yio utrpuio '),
+(2, 'Fatnie', 'Imane', 2147483647, '2018-06-08', '2', '21h15', 'liuzrh rzeiu rteui etriut '),
+(3, 'Fatnie', 'Imane', 2147483647, '2018-06-07', '2', '20h45', 'miore riu ryiou ryopir u^pyo i'),
+(4, 'Fatnie', 'Imane', 2147483647, '2018-06-07', '2', '20h45', 'miore riu ryiou ryopir u^pyo i');
 
 -- --------------------------------------------------------
 
@@ -167,6 +197,12 @@ ALTER TABLE `press`
   ADD PRIMARY KEY (`id_press`);
 
 --
+-- Indexes for table `reserver`
+--
+ALTER TABLE `reserver`
+  ADD PRIMARY KEY (`id_reserver`);
+
+--
 -- Indexes for table `users`
 --
 ALTER TABLE `users`
@@ -186,19 +222,25 @@ ALTER TABLE `avis`
 -- AUTO_INCREMENT for table `contact`
 --
 ALTER TABLE `contact`
-  MODIFY `id_contact` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id_contact` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT for table `franchaise`
 --
 ALTER TABLE `franchaise`
-  MODIFY `id_franchaise` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id_franchaise` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `press`
 --
 ALTER TABLE `press`
   MODIFY `id_press` int(3) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `reserver`
+--
+ALTER TABLE `reserver`
+  MODIFY `id_reserver` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `users`

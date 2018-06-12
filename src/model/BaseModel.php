@@ -44,6 +44,23 @@ class BaseModel extends Model
 
 
     }
+
+
+    public function sendReserver(){
+
+     
+
+        $requete = "INSERT INTO reserver (nom, prenom, cell, date_reserver, no_perssonne, heure, message) VALUES (:nomR, :prenomR, :cell, :date_reserver, :no_perssonne, :heure, :messageR)";
+        $resultat = $this -> getDb() -> prepare($requete);
+        $resultat -> execute(array(':nomR'=>$_POST['nomR'], ':prenomR'=>$_POST['prenomR'], ':cell'=>$_POST['cell'], ':date_reserver'=>$_POST['date_reserver'], ':no_perssonne'=>$_POST['no_perssonne'], ':heure'=>$_POST['heure'], ':messageR'=>$_POST['messageR']));
+
+
+    	// $requete = "INSERT INTO reserver (nom, prenom, cell, message) VALUES (:nomR, :prenomR, :telephone, :messageR)";
+     //    $resultat = $this -> getDb() -> prepare($requete);
+     //    $resultat -> execute(array(':nomR'=>$_POST['nomR'], ':prenomR'=>$_POST['prenomR'],   ':messageR'=>$_POST['messageR']));
+
+
+    }
     
     
 }

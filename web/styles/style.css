@@ -55,46 +55,12 @@ form .fa-paper-plane {
 }
 
 /* -------Franchaise Vous -------- */
-/*
-form {
-    max-width: 500px;
-    margin: 50px auto;
-}
-form input, form textarea {
-    margin-bottom: 20px;
-    padding-left: 40px !important;
-    padding-right: 20px !important;
-}*/
+
 .franchaise-form {
     margin-bottom: 8px;
     margin-top: 20px;
 }
-/*h2 {
-    margin-top: 30px;
-}
-form svg {
-    float: left; 
-    position: absolute; 
-    top:9px;
-    left: 8px;
-}
-.btn-success {
-    margin-top: 20px;
-}
-form .fa-user {
-    color: #999;
-}
-form .fa-envelope {
-    top: 12px;
-    color: #999;
-}
-form .fa-phone {
-    top: 12px;
-    color: #999;
-}
-form .fa-paper-plane {
-    color: #fff !important;
-}*/
+
 .franchaise-form .form-group {
     position: relative; 
     margin-bottom: 0;
@@ -112,6 +78,25 @@ form .fa-paper-plane {
 }
 
 
+/* -------Reservation -------- */
 
+.reservation-form {
+    margin-bottom: 8px;
+    margin-top: 20px;
+}
 
-/*   */
+.reservation-form .form-group {
+    position: relative; 
+    margin-bottom: 0;
+}
+.reservation-form .asterisx {
+    position: absolute;
+    color: #b90d0d;
+    font-size: 30px;
+    right: 10px;
+    top: 0;
+}
+.reservation-form .alert-danger {
+    padding: 5px 10px !important;
+    display: none;
+}

@@ -131,7 +131,7 @@ class BaseController extends Controller
             $emailF         = filter_var($_POST['emailF'],      FILTER_SANITIZE_EMAIL ); 
             $ville          = filter_var($_POST['ville'],       FILTER_SANITIZE_STRING );
             $nomSociete     = filter_var($_POST['nomSociete'],  FILTER_SANITIZE_STRING );
-            $local          = filter_var($_POST['local'],    FILTER_SANITIZE_STRING );
+            $local          = filter_var($_POST['local'],       FILTER_SANITIZE_STRING );
             $msgF           = filter_var($_POST['messageF'],    FILTER_SANITIZE_STRING );
 
             // traitements pour vérifier le contenu des champs...
@@ -191,7 +191,57 @@ class BaseController extends Controller
     
     
     public function reserver(){
-        
+
+        if ($_SERVER['REQUEST_METHOD'] == 'POST'){
+    
+            $nomR           = filter_var($_POST['nomR'],        FILTER_SANITIZE_STRING );
+            $prenomR        = filter_var($_POST['prenomR'],     FILTER_SANITIZE_STRING );
+            $cell           = filter_var($_POST['cell'],        FILTER_SANITIZE_NUMBER_INT );
+            $msgR           = filter_var($_POST['messageR'],    FILTER_SANITIZE_STRING );
+
+            // traitements pour vérifier le contenu des champs...
+
+
+            $formErrors = array (); 
+
+            if (strlen($nomR)<3) {
+                $formErrors[] = 'Nom is not valid' ;
+            }
+            if (strlen($prenomR)<3) {
+                $formErrors[] = 'Prenom is not valid' ;
+            }
+            
+            if (strlen($msgR)<10) {
+                $formErrors[] = 'Message is not valid' ;
+            }
+
+            $headers = 'From: ' . '\r\n';
+            $myEmail = 'formanum.eyad@gmail.com'; 
+            $subject = 'Contact Form';
+
+            if (empty($formErrors)) {
+                mail($myEmail, $subject, $msgR, $headers);
+
+                    $nomR           = '';
+                    $prenomR        = '';
+                    $cell           = '';
+                    $date           = '';
+                    $no_perssonne   = '';
+                    $heure          = '';
+                    $msgR           = '';
+                    $success        = '';
+            }
+           
+            
+            
+            // $erreur .="Veuillez renseigner un email";
+           
+            
+            // traitement pour envoyer le message
+            $reserverSend       = $this -> getModel() ->sendReserver();
+         }
+
+
         $params = array(
             'title' => 'reserver'   
         );
