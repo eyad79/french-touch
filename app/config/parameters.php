@@ -4,12 +4,12 @@
 $parameters = array(
 	   'connect'    => array(
 		'host'    	=> 'localhost',
-		'dbname'  	=> 'french_touch_aj',
+		'dbname'  	=> 'mon_project',
 		'login'		=> 'root',
 		'password' 	=> ''
 	),
 	'site' => array(
-		'url' => '/french_touch_aj/web/'
+		'url' => '/french_touch/web/'
 	)
 );
 

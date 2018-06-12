@@ -22,9 +22,6 @@ class BaseController extends Controller
     }
     
     
-    
-    
-    
     public function concept(){
         
         $params = array(
@@ -37,92 +34,64 @@ class BaseController extends Controller
     
     
     
-    
-    
-    
-    
-    
     function contact(){
         
-        $erreur         = "";
-        // $contact_send   = "";
-
+        $erreur = "";
         
-            // CONDITIONS NOM
-        if ( (isset($_POST["nom"])) && (strlen(trim($_POST["nom"])) > 0) ) {
-            $nom = stripslashes(strip_tags($_POST["nom"]));
-        } else {
-            echo "Merci d'écrire un nom <br />";
-            $nom = "";
-        }
+        if ($_SERVER['REQUEST_METHOD'] == 'POST'){
+    
+            $nom   = filter_var($_POST['nom'],      FILTER_SANITIZE_STRING );
+            $sujet = filter_var($_POST['sujet'],    FILTER_SANITIZE_STRING );
+            $email = filter_var($_POST['email'],    FILTER_SANITIZE_EMAIL ); 
+            $msg   = filter_var($_POST['message'],  FILTER_SANITIZE_STRING );
 
-        // CONDITIONS SUJET
-        if ( (isset($_POST["sujet"])) && (strlen(trim($_POST["sujet"])) > 0) ) {
-            $sujet = stripslashes(strip_tags($_POST["sujet"]));
-        } else {
-            echo "Merci d'écrire un sujet <br />";
-            $sujet = "";
-        }
+            // echo $nom   . '<br>';
+            // echo $sujet . '<br>';
+            // echo $email . '<br>';
+            // echo $msg   . '<br>';
 
-        // CONDITIONS EMAIL
-        if ( (isset($_POST["email"])) && (strlen(trim($_POST["email"])) > 0) && (filter_var($_POST["email"], FILTER_VALIDATE_EMAIL)) ) {
-            $email = stripslashes(strip_tags($_POST["email"]));
-        } elseif (empty($_POST["email"])) {
-            echo "Merci d'écrire une adresse email <br />";
-            $email = "";
-        } else {
-            echo "Email invalide :(<br />";
-            $email = "";
-        }
 
-        // CONDITIONS MESSAGE
-        if ( (isset($_POST["message"])) && (strlen(trim($_POST["message"])) > 0) ) {
-            $message = stripslashes(strip_tags($_POST["message"]));
-        } else {
-            echo "Merci d'écrire un message<br />";
-            $message = "";
-        }
+            $formErrors = array (); 
 
-        // Les messages d'erreurs ci-dessus s'afficheront si Javascript est désactivé
+            if (strlen($nom)<3) {
+                $formErrors[] = 'User is not valid' ;
+            }
+            if (strlen($sujet)<3) {
+                $formErrors[] = 'User is not valid' ;
+            }
+            if (strlen($msg)<10) {
+                $formErrors[] = 'Message is not valid' ;
+            }
 
-        // PREPARATION DES DONNEES
-        $ip           = $_SERVER["REMOTE_ADDR"];
-        $hostname     = gethostbyaddr($_SERVER["REMOTE_ADDR"]);
-        $destinataire = "bashadido@gmail.com";
-        $objet        = "[Site Web] " . $sujet;
-        $contenu      = "Nom de l'expéditeur : " . $nom . "\r\n";
-        $contenu     .= $message . "\r\n\n";
-        $contenu     .= "Adresse IP de l'expéditeur : " . $ip . "\r\n";
-        $contenu     .= "DLSAM : " . $hostname;
+            $headers = 'From: ' . $email . '\r\n';
+            $myEmail = 'formanum.eyad@gmail.com'; 
+            $subject = 'Contact Form';
 
-        $headers  = "CC: " . $email . " \r\n"; // ici l'expediteur du mail
-        $headers .= "Content-Type: text/plain; charset=\"ISO-8859-1\"; DelSp=\"Yes\"; format=flowed /r/n";
-        $headers .= "Content-Disposition: inline \r\n";
-        $headers .= "Content-Transfer-Encoding: 7bit \r\n";
-        $headers .= "MIME-Version: 1.0";
+            if (empty($formErrors)) {
+                mail($myEmail, $subject, $msg, $headers);
 
-        // SI LES CHAMPS SONT MAL REMPLIS
-        if ((empty($nom)) && (empty($sujet)) && (empty($email)) && (!filter_var($email, FILTER_VALIDATE_EMAIL)) && (empty($message)) ) {
-            echo 'echec :( <br /><a href="contact.html">Retour au formulaire</a>';
-        } else {
-            // ENCAPSULATION DES DONNEES 
-            mail($destinataire, $objet, utf8_decode($contenu), $headers);
-            echo 'Formulaire envoyé';
+                    $nom    = '';
+                    $sujet    = '';
+                    $email   = '';
+                    $msg     = '';
+                    $success = '';
+            }
+           
+            // traitements pour vérifier le contenu des champs...
+            
+            $erreur .="Veuillez renseigner un email";
+            
+            
+            // traitement pour envoyer le message
+            $contact_send       = $this -> getModel() ->sendContact();
+            
             
             
         }
-
-    // Les messages d'erreurs ci-dessus s'afficheront si Javascript est désactivé
-        
-       // $contact_send       = $this -> getModel() ->sendContact();
-        
-        
         
         $params = array(
-            'erreur'        => $erreur, 
-            'title'         => 'Contact', 
-            // 'contact_send'  => $contact_send,
-            
+            'erreur' => $erreur, 
+            'title' => 'Contact' 
         );
         
         return $this -> render('layout.html', 'contact.html', $params); 
@@ -154,6 +123,63 @@ class BaseController extends Controller
     }
     
      public function devenir_franchise(){
+
+        if ($_SERVER['REQUEST_METHOD'] == 'POST'){
+    
+            $nomF           = filter_var($_POST['nomF'],        FILTER_SANITIZE_STRING );
+            $prenomF        = filter_var($_POST['prenomF'],     FILTER_SANITIZE_STRING );
+            $emailF         = filter_var($_POST['emailF'],      FILTER_SANITIZE_EMAIL ); 
+            $ville          = filter_var($_POST['ville'],       FILTER_SANITIZE_STRING );
+            $nomSociete     = filter_var($_POST['nomSociete'],  FILTER_SANITIZE_STRING );
+            $local          = filter_var($_POST['local'],    FILTER_SANITIZE_STRING );
+            $msgF           = filter_var($_POST['messageF'],    FILTER_SANITIZE_STRING );
+
+            // traitements pour vérifier le contenu des champs...
+
+
+            $formErrors = array (); 
+
+            if (strlen($nomF)<3) {
+                $formErrors[] = 'Nom is not valid' ;
+            }
+            if (strlen($prenomF)<3) {
+                $formErrors[] = 'Prenom is not valid' ;
+            }
+            if (strlen($ville)<3) {
+                $formErrors[] = 'Ville is not valid' ;
+            }
+            if (strlen($nomSociete)<3) {
+                $formErrors[] = 'Nom Societe is not valid' ;
+            }
+            if (strlen($msgF)<10) {
+                $formErrors[] = 'Message is not valid' ;
+            }
+
+            $headers = 'From: ' . $emailF . '\r\n';
+            $myEmail = 'formanum.eyad@gmail.com'; 
+            $subject = 'Contact Form';
+
+            if (empty($formErrors)) {
+                mail($myEmail, $subject, $msgF, $headers);
+
+                    $nomF    = '';
+                    $prenomF    = '';
+                    $emailF   = '';
+                    $ville    = '';
+                    $nomSociete    = '';
+                    $local    = '';
+                    $msgF     = '';
+                    $success = '';
+            }
+           
+            
+            
+            // $erreur .="Veuillez renseigner un email";
+           
+            
+            // traitement pour envoyer le message
+            $franchaiseSend       = $this -> getModel() ->sendFranchaise();
+         }    
         
         $params = array(
             'title' => 'devenir_franchise'   

@@ -1,1 +1,106 @@
 <h1><?= $title ?></h1>
+
+
+
+  <div class="container">
+
+        <h2 class="text-center"> Devenir Franchaisé </h2>
+
+        <form class="franchaise-form" action="" method="POST">
+            
+            <div class="form-group">
+                <input class="nomF form-control" type="text" name="nomF" placeholder="Nom" value="<?php if (isset($nomF)) { echo $nomF; } ?>" />
+                <i class="fa fa-user fa-fw"></i>
+                <span class="asterisx">*</span>
+                <div class="alert alert-danger custom-alert">
+                    Nom is not valid
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <input class="prenomF form-control" type="text" name="prenomF" placeholder="Prenom" value="<?php if (isset($prenomF)) { echo $prenomF; } ?>" />
+                <i class="fa fa-user fa-fw"></i>
+                <span class="asterisx">*</span>
+                <div class="alert alert-danger custom-alert">
+                    Sujet is not valid
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <input class="emailF form-control" type="email" name="emailF" placeholder="Email" value="<?php if (isset($emailF)) { echo $emailF; } ?>" />
+                <i class="fa fa-envelope fa-fw"></i>
+                <span class="asterisx">*</span>
+                <div class="alert alert-danger custom-alert">
+                    Email is not valid
+                </div>
+            </div>
+
+            <div class="form-group">
+                <input class="ville form-control" type="text" name="ville" placeholder="Ville de la Franchaisé" value="<?php if (isset($ville)) { echo $ville; } ?>" />
+                <i class="fa fa-user fa-fw"></i>
+                <span class="asterisx">*</span>
+                <div class="alert alert-danger custom-alert">
+                    Ville is not valid
+                </div>
+            </div>
+
+            <div class="form-group">
+                <input class="nomSociete form-control" type="text" name="nomSociete" placeholder="Nom de votre société" value="<?php if (isset($nomSociete)) { echo $nomSociete; } ?>" />
+                <i class="fa fa-user fa-fw"></i>
+                <!-- <span class="asterisx">*</span> -->
+                <div class="alert alert-danger custom-alert">
+                    nom societe is not valid
+                </div>
+            </div>
+
+            <div class="form-group">
+            	<h2> Avez-Vous un Local ? </h2>
+                <div class="form-check form-check-inline">
+					<input class="local form-check-input" type="radio" name="local" id="inlineRadio1" value="Oui">
+					<label class="form-check-label" for="inlineRadio1">Oui</label>
+				</div>
+				<div class="form-check form-check-inline">
+					  <input class="local form-check-input" type="radio" name="local" id="inlineRadio2" value="Non">
+					  <label class="form-check-label" for="inlineRadio2">Non</label>
+				</div>
+                
+                <!-- <span class="asterisx">*</span>
+                <div class="alert alert-danger custom-alert">
+                     is not valid
+                </div> -->
+            </div>
+
+            <div class="form-group">
+                <textarea class="msgF form-control" placeholder="Message" name="messageF"><?php if (isset($msgF)) { echo $msgF; } ?></textarea>
+                <span class="asterisx">*</span>
+                <div class="alert alert-danger custom-alert">
+                    message is not valid
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <input type="submit" class="btn btn-success btn-block" value="send message" />
+                <i class="fas fa-paper-plane"></i>
+            </div>
+
+
+            <?php if (! empty($formErrors)) { ?>
+
+            <div class="alert alert-danger" role="start">
+
+                <?php 
+                         foreach ($formErrors as $error) {
+                            echo $error . '<br/>'; 
+                        } 
+                    ?>
+            </div>
+            <?php }  ?>
+            <?php 
+                if (isset($success)) { echo '<div class="alert alert-success"> we have recieved your message</div>';} ?>
+
+
+        </form>
+
+</div>  
+
+
