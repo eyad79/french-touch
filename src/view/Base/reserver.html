@@ -1,9 +1,10 @@
-<h1><?= $title ?></h1>
+<!-- <h1><?= $title ?></h1> -->
 
 
 <div class="container">
 
-        <h2 class="text-center"> Formulaire de Réservation  </h2>
+         <div class=" background-form">
+         	<h2 class="text-center title-form"> Formulaire de Réservation </h2>
 
         <form class="reservation-form" action="" method="POST">
             
@@ -36,7 +37,7 @@
 
             <div class="form-group">
                 <input class="date_reserver form-control" type="date" name="date_reserver" value="<?php if (isset($date)) { echo $date; } ?>" />
-                <!-- <i class="fa fa-phone fa-fw"></i> -->
+                <i class="fas fa-calendar-alt"></i>
                 <span class="asterisx">*</span>
                 <div class="alert alert-danger custom-alert">
                     date is not valid
@@ -108,4 +109,5 @@
 
         </form>
 
+</div>
 </div>  

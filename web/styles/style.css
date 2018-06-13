@@ -1,4 +1,4 @@
-
+/*
 form {
     max-width: 500px;
     margin: 50px auto;
@@ -55,7 +55,7 @@ form .fa-paper-plane {
 }
 
 /* -------Franchaise Vous -------- */
-
+/*
 .franchaise-form {
     margin-bottom: 8px;
     margin-top: 20px;
@@ -75,11 +75,11 @@ form .fa-paper-plane {
 .franchaise-form .alert-danger {
     padding: 5px 10px !important;
     display: none;
-}
+}*/
 
 
 /* -------Reservation -------- */
-
+/*
 .reservation-form {
     margin-bottom: 8px;
     margin-top: 20px;
@@ -99,4 +99,4 @@ form .fa-paper-plane {
 .reservation-form .alert-danger {
     padding: 5px 10px !important;
     display: none;
-}
+}*/

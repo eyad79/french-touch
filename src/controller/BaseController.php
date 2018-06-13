@@ -34,7 +34,7 @@ class BaseController extends Controller
     
     
     
-    function contact(){
+    public function contact(){
         
         $erreur = "";
         
@@ -248,6 +248,26 @@ class BaseController extends Controller
         
         return $this -> render('layout.html', 'reserver.html', $params);
         
+    }
+
+
+
+    // Administrateur 
+
+    public function admin(){
+        
+       // 1 : Si besoin d'infos de la BDD... on demande à notre model ($this -> getModel()) les infos. 
+        // $avis = $this -> getModel() -> getAllAvis();
+        
+        
+       // Retourner la vue. 
+        
+        $params= array(
+            'title' => 'admin',
+            // 'avis' => $avis    
+        );
+        
+        return $this -> render('layout.html', 'admin.php', $params);
     }
     
 

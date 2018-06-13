@@ -1,10 +1,11 @@
-<h1><?= $title ?></h1>
+<!-- <h1><?= $title ?></h1> -->
 
 
 
   <div class="container">
 
-        <h2 class="text-center"> Devenir Franchaisé </h2>
+        <div class=" background-form">
+            <h2 class="text-center title-form"> Devenir franchisé </h2>
 
         <form class="franchaise-form" action="" method="POST">
             
@@ -37,7 +38,7 @@
 
             <div class="form-group">
                 <input class="ville form-control" type="text" name="ville" placeholder="Ville de la Franchaisé" value="<?php if (isset($ville)) { echo $ville; } ?>" />
-                <i class="fa fa-user fa-fw"></i>
+                <i class="fas fa-map-marker"></i>
                 <span class="asterisx">*</span>
                 <div class="alert alert-danger custom-alert">
                     Ville is not valid
@@ -46,7 +47,7 @@
 
             <div class="form-group">
                 <input class="nomSociete form-control" type="text" name="nomSociete" placeholder="Nom de votre société" value="<?php if (isset($nomSociete)) { echo $nomSociete; } ?>" />
-                <i class="fa fa-user fa-fw"></i>
+                <i class="fas fa-building"></i>
                 <!-- <span class="asterisx">*</span> -->
                 <div class="alert alert-danger custom-alert">
                     nom societe is not valid
@@ -102,5 +103,5 @@
         </form>
 
 </div>  
-
+</div>
 

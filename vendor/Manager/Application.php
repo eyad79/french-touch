@@ -17,7 +17,8 @@ final class Application
 		// echo '<pre>';
 		// print_r($tab);
 		// echo '</pre>'; 
-		
+
+
 		if(isset($tab[3]) && !empty($tab[3]) && file_exists(__DIR__ . '/../../src/Controller/' . ucfirst($tab[3]) . 'Controller.php')){
 			// S'il y a un controller xxxxx dans l'url et que le fichier xxxxController.php existe
 			$this -> controller = 'Controller\\' . ucfirst($tab[3]) . 'Controller';	

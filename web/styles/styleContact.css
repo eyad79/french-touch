@@ -183,7 +183,14 @@ color: #fff;
 background-color: #fff;
 max-width: 500px ; 
 margin: 1px auto;
+margin-top: 200px;
 }
 .contact-form, .franchaise-form, .reservation-form {
 padding: 0px 25px 0px 25px;
+}
+
+/* -----login ------- */
+
+.login h4 {
+    text-align: center;
 }
