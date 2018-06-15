@@ -14,8 +14,8 @@ final class Application
 			
 		$tab = explode('/', $_SERVER['REQUEST_URI']);
 
-		// echo '<pre>';
-		// print_r($tab);
+		//echo '<pre>';
+		//print_r($tab);
 		// echo '</pre>'; 
 
 

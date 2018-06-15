@@ -1,6 +1,6 @@
 <?php
 
-namespace Controller; 
+namespace Controller;  
 
 class BaseController extends Controller
 {
@@ -18,7 +18,7 @@ class BaseController extends Controller
             'avis' => $avis    
         );
         
-        return $this -> render('layout.html', 'home.html', $params);
+        return $this -> render('layout.php', 'home.php', $params);
     }
     
     
@@ -28,7 +28,7 @@ class BaseController extends Controller
             'title' => 'Concept'   
         );
         
-        return $this -> render('layout.html', 'concept.html', $params);
+        return $this -> render('layout.php', 'concept.php', $params);
         
     }
     
@@ -94,7 +94,7 @@ class BaseController extends Controller
             'title' => 'Contact' 
         );
         
-        return $this -> render('layout.html', 'contact.html', $params); 
+        return $this -> render('layout.php', 'contact.php', $params); 
         
         
     }
@@ -107,7 +107,7 @@ class BaseController extends Controller
             'title' => 'Menu'   
         );
         
-        return $this -> render('layout.html', 'Menu.html', $params);
+        return $this -> render('layout.php', 'Menu.php', $params);
         
     }
     
@@ -118,7 +118,7 @@ class BaseController extends Controller
             'title' => 'Presse'   
         );
         
-        return $this -> render('layout.html', 'Presse.html', $params);
+        return $this -> render('layout.php', 'Presse.php', $params);
         
     }
     
@@ -185,7 +185,7 @@ class BaseController extends Controller
             'title' => 'devenir_franchise'   
         );
         
-        return $this -> render('layout.html', 'devenir_franchise.html', $params);
+        return $this -> render('layout.php', 'devenir_franchise.php', $params);
         
     }
     
@@ -246,7 +246,7 @@ class BaseController extends Controller
             'title' => 'reserver'   
         );
         
-        return $this -> render('layout.html', 'reserver.html', $params);
+        return $this -> render('layout.php', 'reserver.php', $params);
         
     }
 
@@ -254,22 +254,76 @@ class BaseController extends Controller
 
     // Administrateur 
 
-    public function admin(){
+    public function admin()
+    {
         
-       // 1 : Si besoin d'infos de la BDD... on demande à notre model ($this -> getModel()) les infos. 
-        // $avis = $this -> getModel() -> getAllAvis();
+        if ($_SERVER['REQUEST_METHOD'] == 'POST')
+        {
+
+            $username   = $_POST['username']; 
+            $password   = $_POST['password'];
+            $hashedPass = sha1($password); 
+            $count      = '';
+
+        // echo $username . ' '  . $passowrd . ' ' . $hashedPass ;
+
+            $userget    = $this -> getModel() ->admin();
+
+            // if ($count > 0) 
+            // {
+            //     echo 'Welcome' . ' ' . $username; 
+            //     $_SESSION['username'] = $username;
+            //     header('Location: dashboard.php');
+            //     exit();
+            // }
+
+            // $params= array(
+            //     'title' => 'admin',
+                    
+            // );
+
+            // return $this -> dashboard();
+        } 
+       // Retourner la vue. 
         
+        $params= array(
+                'title' => 'admin',
+                    
+            );
+        // $params= array(
+        //     'title' => 'admin',
+                
+        // );
+        
+        return $this -> render('layout.php', 'admin.php', $params);
+    }
+    
+
+     public function dashboard(){
         
        // Retourner la vue. 
         
         $params= array(
-            'title' => 'admin',
-            // 'avis' => $avis    
+            'title' => 'dashboard',
+                
         );
         
-        return $this -> render('layout.html', 'admin.php', $params);
+        return $this -> render('layout.php', 'dashboard.php', $params);
     }
-    
+
+     public function logout(){
+        
+       // Retourner la vue. 
+        
+        $params= array(
+            'title' => 'logout',
+                
+        );
+        
+        return $this -> render('layout.php', 'logout.php', $params);
+    }
+
+   
 
     
     

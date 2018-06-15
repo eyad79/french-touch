@@ -115,7 +115,7 @@ padding-right: 20px !important;
 margin-bottom: 8px;
 margin-top: 20px;
 }
-h2 {
+.text-center h2 {
 margin-top: 30px;
 max-width: 500px;
 margin: 10px auto;
@@ -190,7 +190,7 @@ padding: 0px 25px 0px 25px;
 }
 
 /* -----login ------- */
-
+/*
 .login h4 {
     text-align: center;
-}
+}*/

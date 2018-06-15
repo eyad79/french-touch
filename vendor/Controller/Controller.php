@@ -38,13 +38,14 @@ class Controller
 	
 	public function render($layout, $view, $params){
 		
+
 		$dirView = __DIR__ . '/../../src/View/';
 		$dirFile = str_replace(array('Controller\\', 'Controller'), '', get_called_class()) . '/';
 		// Controller\ProduitController ==> Produit
 		
 		$path_view = $dirView . strtolower($dirFile) . $view;
 		//../View/produit/boutique.html
-		
+
 		$path_layout = $dirView . $layout;
 		//../View/layout.html
 		
@@ -56,10 +57,12 @@ class Controller
 		
 		//-----------------
 		ob_start(); // Enclenche la temporisation de sortie. C'est à dire que ce qui va suivre ne sera pas exécuter tout de suite, mais temporisé (retenu en memoire tampon).	
+
 		require $path_view;
 		$content = ob_get_clean(); // Je stocke ce qui a été retenu dans la variable $content;
 		
 		ob_start();
+
 		require $path_layout;
 		
 		return ob_end_flush(); // Retourne tout ce qui a été retenu et eteint la temporisation. 

@@ -1,0 +1,112 @@
+<!-- <h1><?= $title ?></h1> -->
+
+<div class="container">
+
+         <div class=" background-form">
+         	<h2 class="text-center title-form"> Formulaire de Réservation </h2>
+
+        <form class="reservation-form" action="" method="POST">
+            
+            <div class="form-group">
+                <input class="nomR form-control" type="text" name="nomR" placeholder="Nom" value="<?php if (isset($nomR)) { echo $nomR; } ?>" />
+                <i class="fa fa-user fa-fw"></i>
+                <span class="asterisx">*</span>
+                <div class="alert alert-danger custom-alert">
+                    Nom is not valid
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <input class="prenomR form-control" type="text" name="prenomR" placeholder="Prenom" value="<?php if (isset($prenomR)) { echo $prenomR; } ?>" />
+                <i class="fa fa-user fa-fw"></i>
+                <span class="asterisx">*</span>
+                <div class="alert alert-danger custom-alert">
+                    Prenom is not valid
+                </div>
+            </div>
+
+            <div class="form-group">
+                <input class="cell form-control" type="text" name="cell" placeholder="Téléphone" value="<?php if (isset($cell)) { echo $cell; } ?>" />
+                <i class="fa fa-phone fa-fw"></i>
+                <span class="asterisx">*</span>
+                <div class="alert alert-danger custom-alert">
+                    the number telephone is not valid
+                </div>
+            </div>
+
+            <div class="form-group">
+                <input class="date_reserver form-control" type="date" name="date_reserver" value="<?php if (isset($date)) { echo $date; } ?>" />
+                <i class="fas fa-calendar-alt"></i>
+                <span class="asterisx">*</span>
+                <div class="alert alert-danger custom-alert">
+                    date is not valid
+                </div>
+            </div>
+            
+            <div class="form-group">
+
+                <h3>Selectez la  Number des Pessonnes </h3>
+
+                <select class="no_perssonne" name="no_perssonne" >
+	                <?php for ($i=1 ; $i < 11; $i++) :  ?>
+	                	<?php echo "\t",'<option value="', $i ,'">', $i ,'</option>',"\n"; ?>
+	                <?php endfor; ?>
+                </select>
+
+                <span class="asterisx">*</span>
+                <div class="alert alert-danger custom-alert">
+                    numbre de perssone is not valid
+                </div>
+            </div>
+
+            <div class="form-group">
+
+                <h3>Selectez la  Number des Pessonnes </h3>
+
+                <select class="heure" name="heure" >
+                <?php for ($h=19 ; $h <= 24; $h++) :  ?>
+                	<?php for ($m=0 ; $m <=45; $m = $m+15) :  ?>
+                		<?php echo "\t",'<option value="', $h . 'h' . $m ,'">', $h . ' ' . 'h' . ' ' . $m ,'</option>',"\n"; ?>
+                	<?php endfor; ?>
+                <?php endfor; ?>
+                </select>
+
+                <span class="asterisx">*</span>
+                <div class="alert alert-danger custom-alert">
+                    numbre de perssone is not valid
+                </div>
+            </div>
+
+            <div class="form-group">
+                <textarea class="msgR form-control" placeholder="Message" name="messageR"><?php if (isset($msgR)) { echo $msgR; } ?></textarea>
+                
+                <div class="alert alert-danger custom-alert">
+                    message is not valid
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <input type="submit" class="btn btn-success btn-block" value="send message" />
+                <i class="fas fa-paper-plane"></i>
+            </div>
+
+
+            <?php if (! empty($formErrors)) { ?>
+
+            <div class="alert alert-danger" role="start">
+
+                <?php 
+                         foreach ($formErrors as $error) {
+                            echo $error . '<br/>'; 
+                        } 
+                    ?>
+            </div>
+            <?php }  ?>
+            <?php 
+                if (isset($success)) { echo '<div class="alert alert-success"> we have recieved your message</div>';} ?>
+
+
+        </form>
+
+</div>
+</div>  
