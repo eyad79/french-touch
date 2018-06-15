@@ -6,9 +6,22 @@ if (isset($_SESSION['username'])) {
     header('Location: dashboard');
 }
 
-print_r($_SESSION); 
+
 
 ?>
+
+<style type="text/css">
+	
+	body {
+		background-image: url("<?= $url ?>/images/Background.jpg");
+		background-size: cover;
+		background-repeat: no-repeat;
+
+	}
+	
+</style>
+
+<div class="headerMarge"></div>
 
 <form class="login" action="" method="post">
     <h4 class="text-center" >Admin login</h4>

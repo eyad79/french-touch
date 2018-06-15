@@ -77,6 +77,11 @@ class BaseModel extends Model
 
 
     }
+
+
+    /*------------- dashboard ------------------*/
+
+    
     
     
 }
