@@ -15,15 +15,25 @@
     <texarea name="message" placeholder="Votre Message"></texarea>
     <input type="submit" value="Envoyer" />
 </form>-->
+<style type="text/css">
+    
+    body {
+        background-image: url("<?= $url ?>/images/background-.jpg");
+        background-size: cover;
+        background-repeat: no-repeat;
 
+    }
+    
+</style>
 
-
+<!-- <div class="headerMarge"></div> -->
 
 <div class="container">
     <div class=" background-form">
         <h2 class="text-center title-form"> Contactez-nous </h2>
 
         <form class="contact-form" action="" method="POST">
+            
             <div class="form-group">
                 <input class="nom form-control" type="text" name="nom" placeholder="Nom" value="<?php if (isset($nom)) { echo $nom; } ?>" />
                 <i class="fa fa-user fa-fw"></i>
@@ -77,6 +87,36 @@ if (isset($success)) { echo '<div class="alert alert-success"> we have recieved 
 </form>
 
 </div>
+<!-- 
+<h3>My Google Maps Demo</h3>
+    <div id="map"></div>
+    <script>
+      function initMap() {
+        var uluru = {lat: -25.363, lng: 131.044};
+        var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 4,
+          center: uluru
+        });
+        var marker = new google.maps.Marker({
+          position: uluru,
+          map: map
+        });
+      }
+    </script>
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCF61FIATOuZm6tUsJ2poanN7T4KQ61i1A&callback=initMap">
+    </script> -->
+
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7418.142160112545!2d2.2252627227875426!3d48.90187680767916!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e66455a94869b5%3A0xf0a35c052a458408!2sLa+French+Touch!5e0!3m2!1sfr!2sfr!4v1529075661762" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+ 
+
+
+ <!-- 
+<div class="container">
+    <iframe src="https://www.google.com/maps/d/u/0/embed?mid=1aZIPPxif5Wk35RtwNGi2dMLK94_ZEY3x" width="640" height="480"></iframe>
+</div>
+ -->
+
 </div>
 
 <!--     <div class="container">

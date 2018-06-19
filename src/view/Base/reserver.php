@@ -1,5 +1,20 @@
 <!-- <h1><?= $title ?></h1> -->
 
+<style type="text/css">
+    
+    body {
+        background-image: url("<?= $url ?>/images/Background.jpg");
+        background-size: cover;
+        background-repeat: no-repeat;
+
+    }
+    
+</style>
+
+
+
+<!-- <div class="headerMarge"></div> -->
+
 <div class="container">
 
          <div class=" background-form">

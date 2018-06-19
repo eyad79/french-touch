@@ -13,7 +13,7 @@ if (isset($_SESSION['username'])) {
 <style type="text/css">
 	
 	body {
-		background-image: url("<?= $url ?>/images/Background.jpg");
+		background-image: url("<?= $url ?>/images/background-.jpg");
 		background-size: cover;
 		background-repeat: no-repeat;
 
@@ -25,7 +25,7 @@ if (isset($_SESSION['username'])) {
 
 <form class="login" action="" method="post">
     <h4 class="text-center" >Admin login</h4>
-    <input class="form-control" type="test" name="username" placeholder="Username" autocomplete="off">
+    <input class="form-control" type="text" name="username" placeholder="Username" autocomplete="off">
     <input class="form-control" type="password" name="password" placeholder="Passowrd" autocomplete="new-password">
     <input class="btn btn-primary btn-block" type="submit" name="login">
 

@@ -1,11 +1,22 @@
 
-<h1><?= $title ?></h1>
+<!-- <h1><?= $title ?></h1> -->
 
+<style type="text/css">
+    
+    body {
+        background-image: url("<?= $url ?>/images/background-.jpg");
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+    
+</style>
 
+<!-- <div class="headerMarge"></div> -->
 
   <div class="container">
+    <div class=" background-form">
 
-        <h2 class="text-center"> Devenir Franchaisé </h2>
+        <h2 class="text-center title-form"> Devenir Franchaisé </h2>
 
         <form class="franchaise-form" action="" method="POST">
             
@@ -101,6 +112,7 @@
 
 
         </form>
+    </div>
 
 </div>  
 
