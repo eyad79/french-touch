@@ -537,9 +537,25 @@ body {
 
 }
 
+
+.avis-client {
+  flex-wrap: nowrap !important;
+  overflow: hidden;
+}
+/*
+@media screen and (min-width: 1024px) { 
 .avis-client {
   flex-wrap: nowrap !important;
 }
+}
+*/
+/*@media screen and (max-width: 767px) { 
+.avis-container {
+  margin-top: -100px;
+}
+}*/
+
+
 .avis-nom{
     font-family: 'BebasNeue', serif;
     font-size: 28px;
@@ -815,40 +831,41 @@ article .box {
 /* ----------------concept---------------  */
 
 .text-burger {
-  /*background-color: rgba(247, 239, 220, 0.7); 
-  padding-top: 15%;*/
+  background-color: rgba(247, 239, 220, 0.7); 
+  padding-top: 10%;
+  /*background-color: rgba(255, 255, 255, 0.7);*/
+   /*height: 50%;*/
+  /* padding-bottom: 15px;
+  /* margin-top: 15%;*/
+
 
 
 }
 .img-burger {
   max-width: 100%;
+  /*height: 100%;*/
 }
-.text-burger {
-   background-color: rgba(255, 255, 255, 0.7);
-   height: 50%;
-   padding-bottom: 15px;
-   margin-top: 15%;
-}
+
 .container-press {
   margin-bottom: 80px;
 }
 .text-burger-p {
  
-  padding: 15px;
+  /*padding: 15px;*/
   color:  #B32E33;
 }
 .button-text {
   cursor: pointer;
 }
 .text-burger2 {
-  margin-top: 10%;
+/*  margin-top: 10%;*/
 }
 .text-burger3, .text-burger4, .text-burger5  {
-  margin-top: 6%;
+  /*margin-top: 6%;*/
 }
 
 .text-burger6, .text-burger7, .text-burger8 {
-  margin-top: 7%;
+  /*margin-top: 7%;*/
 }
 
 
@@ -895,3 +912,29 @@ article .box {
        .iframe {
         margin: 10px auto;
        }
+/*
+.container-fb {
+  margin-top: 0;
+  height: 100px;
+  overflow: hidden;
+}
+.fb-page {
+
+}*/
+
+
+/*------- Dashboard -------------*/
+
+.avis-status {
+  font-size: 2rem; 
+  color: #f00; 
+  border: 1px solid #f00;
+  padding-left: 15px; 
+}
+
+.btnaDdAvis {
+  width:50%;
+  font-size: 3em;
+  margin-left: 25%; 
+  margin-right: 25%;
+}

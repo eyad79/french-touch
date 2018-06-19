@@ -15,7 +15,7 @@ class BaseController extends Controller
         
         $params= array(
             'title' => 'Accueil',
-            'avis' => $avis    
+            'avis'  => $avis    
         );
         
         return $this -> render('layout.php', 'home.php', $params);
@@ -36,7 +36,8 @@ class BaseController extends Controller
     
     public function contact(){
         
-        $erreur = "";
+        // $erreur = "";
+        $contact_send = '';
         
         if ($_SERVER['REQUEST_METHOD'] == 'POST'){
     
@@ -90,8 +91,9 @@ class BaseController extends Controller
         }
         
         $params = array(
-            'erreur' => $erreur, 
-            'title' => 'Contact' 
+            'erreur'        => $erreur, 
+            'title'         => 'Contact', 
+            'contact_send'  => $contact_send 
         );
         
         return $this -> render('layout.php', 'contact.php', $params); 
@@ -182,7 +184,8 @@ class BaseController extends Controller
          }    
         
         $params = array(
-            'title' => 'devenir_franchise'   
+            'title'             => 'devenir_franchise' , 
+            'franchaiseSend'    => $franchaiseSend  
         );
         
         return $this -> render('layout.php', 'devenir_franchise.php', $params);
@@ -243,7 +246,8 @@ class BaseController extends Controller
 
 
         $params = array(
-            'title' => 'reserver'   
+            'title'         => 'reserver' , 
+            'reserverSend'  => $reserverSend   
         );
         
         return $this -> render('layout.php', 'reserver.php', $params);
@@ -287,7 +291,8 @@ class BaseController extends Controller
        // Retourner la vue. 
         
         $params= array(
-                'title' => 'admin',
+                'title'     => 'admin',
+                'userget'   => $userget
                     
             );
         // $params= array(
@@ -300,11 +305,39 @@ class BaseController extends Controller
     
 
      public function dashboard(){
+
+        // 1 : Si besoin d'infos de la BDD... on demande à notre model ($this -> getModel()) les infos. 
+        $avisDashboard  = $this -> getModel() -> getAllAvisDashboard();
+        //$avisStatus     = $this -> getModel() -> changeStatus();
         
+        $avisStatus = '';
+
+         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+
+            // $id_avis    = filter_var($_POST['id_avis'],  FILTER_SANITIZE_NUMBER_INT );
+            // $status     = filter_var($_POST['status'],   FILTER_SANITIZE_NUMBER_INT );
+            
+
+            // $formErrors = array (); 
+
+            // if (strlen($id_avis)=0) {
+            //     $formErrors[] = 'id is not valid' ;
+            // }
+            // if (strlen($status)>2) {
+            //     $formErrors[] = 'status is not valid' ;
+            // }
+
+            $avisStatus     = $this -> getModel() -> changeStatus();
+
+        
+        
+        }
        // Retourner la vue. 
         
         $params= array(
-            'title' => 'dashboard',
+            'title'         => 'dashboard',
+            'avisDashboard' => $avisDashboard, 
+            'avisStatus'    => $avisStatus  
                 
         );
         
@@ -323,6 +356,42 @@ class BaseController extends Controller
         return $this -> render('layout.php', 'logout.php', $params);
     }
 
+
+
+
+     public function addAvis(){
+        
+       // 1 : Si besoin d'infos de la BDD... on demande à notre model ($this -> getModel()) les infos. 
+        $sendAvis = '';
+         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+
+            $note       = filter_var($_POST['note'],        FILTER_SANITIZE_NUMBER_INT );
+            $nom        = filter_var($_POST['nom'],         FILTER_SANITIZE_STRING );
+            $date_avis  = filter_var($_POST['date_avis'],   FILTER_SANITIZE_NUMBER_INT ); 
+            $content    = filter_var($_POST['content'],     FILTER_SANITIZE_STRING );
+
+            $formErrors = array (); 
+
+            if (strlen($nom)<3) {
+                $formErrors[] = 'User is not valid' ;
+            }
+            if (strlen($content)<10) {
+                $formErrors[] = 'Message is not valid' ;
+            }
+
+            $sendAvis       = $this -> getModel() -> sendAvis();
+
+         }
+       // Retourner la vue. 
+        
+        $params= array(
+            'title' => 'addAvis',
+            'sendAvis'  => $sendAvis    
+        );
+        
+        return $this -> render('layout.php', 'addAvis.php', $params);
+    }
+    
    
 
     
