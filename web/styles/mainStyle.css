@@ -577,7 +577,7 @@ body {
 }
 .avis-container p:not(.avis-nom) {
   font-family: 'Fjalla', serif;
-  font-size: 14px;
+  font-size: 2em;
   color: black;
 }
 .avis-container .avis-style {
@@ -992,4 +992,35 @@ article .box {
 }
 .avisDashboard form input {
   margin-bottom: 0;
+}
+.avis-text, .avis-id {
+  font-family: 'Fjalla', serif;
+  font-size: 2em;
+  color: black;
+  padding-left: 10px;
+}
+
+/*--------Logout---------*/
+
+.logout-a h1 {
+  padding: 20px;
+  margin: 75px;
+  border-radius: 10px;
+}
+.logout-a a {
+  padding: 15px;
+  border-radius: 10px;
+}
+.logout-a .a {
+    margin: 10px auto;
+    text-align: center;
+    margin-bottom: 13%;
+}
+.logout-a a:hover {
+  color: #fff;
+  text-decoration: none;
+}
+
+.map {
+  margin-bottom: 50px;
 }
