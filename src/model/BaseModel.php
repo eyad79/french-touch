@@ -70,10 +70,11 @@ class BaseModel extends Model
 
 
     public function admin(){
+    	//session_start();  
     	session_start(); 
-		print_r($_SESSION); 
+        print_r($_SESSION); 
 
-    	$username   = $_POST['username']; 
+        $username   = $_POST['username']; 
         $password   = $_POST['password'];
         $hashedPass = sha1($password); 
      
@@ -87,10 +88,10 @@ class BaseModel extends Model
         // echo $count;
 
         if ($count > 0) {
-        	echo 'Welcome' . ' ' . $username; 
-        	$_SESSION['username'] = $username;
-        	header('Location: dashboard');
-        	exit();
+            echo 'Welcome' . ' ' . $username; 
+            $_SESSION['username'] = $username;
+            header('Location: dashboard');
+            exit();
         }
 
 
@@ -170,15 +171,29 @@ class BaseModel extends Model
         //         $newValues .= ", $key = :$key ";
         //     }
         // }
-        $id_avis = $_POST['id_avis']; 
+        // $id_avis = $_POST['id_avis']; 
         // $status = $_POST['status'];
 
-        $requete = "UPDATE avis set status WHERE id_avis =:id_avis";
-        $resultat = $this -> getDb() -> prepare($requete);
-        $infos['id_avis'] = $id_avis;
-        // la ligne ci-dessous est pour ajouter notre id passé en parametre dans l'array de la méthode execute(); 
-        return $resultat -> execute($infos, $id_avis);
 
+
+
+
+        // if(isset($_POST) && !empty($_POST))
+        // {
+
+            $requete = "UPDATE avis SET status = :status WHERE id_avis = :id_avis";
+            $resultat = $this -> getDb() -> prepare($requete);
+            $resultat->bindValue(':id_avis', $_POST['id_avis'], PDO::PARAM_INT);
+            $resultat->bindValue(':status', $_POST['status'], PDO::PARAM_INT);
+            $resultat -> execute();
+            header("Refresh:0");       
+        // }
+        
+
+     
+        
+        // la ligne ci-dessous est pour ajouter notre id passé en parametre dans l'array de la méthode execute(); 
+        
 
 
 
@@ -189,6 +204,15 @@ class BaseModel extends Model
         $requete = "INSERT INTO avis (note, nom, date_avis, content) VALUES (:note, :nom, :date_avis, :content)";
         $resultat = $this -> getDb() -> prepare($requete);
         $resultat -> execute(array(':note'=>$_POST['note'], ':nom'=>$_POST['nom'], ':date_avis'=>$_POST['date_avis'], ':content'=>$_POST['content']));
+    }
+
+     public function deletAvis(){
+        $requete = "DELETE FROM `avis` WHERE  id_avis = :id_avis_delet ";
+        $resultat = $this -> getDb() -> prepare($requete);
+        $resultat -> bindValue(':id_avis_delet', $_POST['id_avis_delet'] , PDO::PARAM_INT); 
+        $resultat -> execute();
+        header("Refresh:0"); 
+        
     }
     
     

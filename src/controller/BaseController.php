@@ -40,6 +40,8 @@ class BaseController extends Controller
         $contact_send = '';
         
         if ($_SERVER['REQUEST_METHOD'] == 'POST'){
+
+            $erreur = '';
     
             $nom   = filter_var($_POST['nom'],      FILTER_SANITIZE_STRING );
             $sujet = filter_var($_POST['sujet'],    FILTER_SANITIZE_STRING );
@@ -125,6 +127,7 @@ class BaseController extends Controller
     }
     
      public function devenir_franchise(){
+        $franchaiseSend = '';
 
         if ($_SERVER['REQUEST_METHOD'] == 'POST'){
     
@@ -194,6 +197,7 @@ class BaseController extends Controller
     
     
     public function reserver(){
+        $reserverSend  = '';
 
         if ($_SERVER['REQUEST_METHOD'] == 'POST'){
     
@@ -222,7 +226,8 @@ class BaseController extends Controller
             $myEmail = 'formanum.eyad@gmail.com'; 
             $subject = 'Contact Form';
 
-            if (empty($formErrors)) {
+            if (empty($formErrors)) 
+            {
                 mail($myEmail, $subject, $msgR, $headers);
 
                     $nomR           = '';
@@ -242,6 +247,8 @@ class BaseController extends Controller
             
             // traitement pour envoyer le message
             $reserverSend       = $this -> getModel() ->sendReserver();
+            header("Refresh:0");  
+
          }
 
 
@@ -260,8 +267,8 @@ class BaseController extends Controller
 
     public function admin()
     {
-        
-        if ($_SERVER['REQUEST_METHOD'] == 'POST')
+        $userget = '';
+         if ($_SERVER['REQUEST_METHOD'] == 'POST')
         {
 
             $username   = $_POST['username']; 
@@ -291,8 +298,7 @@ class BaseController extends Controller
        // Retourner la vue. 
         
         $params= array(
-                'title'     => 'admin',
-                'userget'   => $userget
+                'title' => 'admin',
                     
             );
         // $params= array(
@@ -301,6 +307,7 @@ class BaseController extends Controller
         // );
         
         return $this -> render('layout.php', 'admin.php', $params);
+
     }
     
 
@@ -308,36 +315,65 @@ class BaseController extends Controller
 
         // 1 : Si besoin d'infos de la BDD... on demande à notre model ($this -> getModel()) les infos. 
         $avisDashboard  = $this -> getModel() -> getAllAvisDashboard();
-        //$avisStatus     = $this -> getModel() -> changeStatus();
         
-        $avisStatus = '';
+        $avisStatus     = '';
+        $avisDelet      = '';
 
-         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+         if ($_SERVER['REQUEST_METHOD'] == 'POST') 
+         {
 
-            // $id_avis    = filter_var($_POST['id_avis'],  FILTER_SANITIZE_NUMBER_INT );
-            // $status     = filter_var($_POST['status'],   FILTER_SANITIZE_NUMBER_INT );
+            $id_avis    = filter_var($_POST['id_avis'],  FILTER_SANITIZE_NUMBER_INT );
+            $status     = filter_var($_POST['status'],   FILTER_SANITIZE_NUMBER_INT );
             
 
-            // $formErrors = array (); 
+            $formErrors = array (); 
 
-            // if (strlen($id_avis)=0) {
-            //     $formErrors[] = 'id is not valid' ;
-            // }
-            // if (strlen($status)>2) {
-            //     $formErrors[] = 'status is not valid' ;
-            // }
+            if (strlen($id_avis)<0)
+             {
+                 $formErrors[] = 'id is not valid' ;
+             }
+
+            if (strlen($status)>2)            
+            {
+
+                $formErrors[] = 'status is not valid' ;
+            }
 
             $avisStatus     = $this -> getModel() -> changeStatus();
 
         
         
         }
+
+        if ($_SERVER['REQUEST_METHOD'] == 'POST') 
+         {
+
+            $id_avis_delet    = filter_var($_POST['id_avis_delet'],  FILTER_SANITIZE_NUMBER_INT );
+
+            $formErrors = array (); 
+
+            if (strlen($id_avis_delet)<0)
+             {
+                 $formErrors[] = 'id is not valid' ;
+             }
+
+
+            $avisDelet     = $this -> getModel() -> deletAvis();
+        
+        }else {
+            echo 'erreur';
+        }
+
+
+
+ 
        // Retourner la vue. 
         
         $params= array(
             'title'         => 'dashboard',
             'avisDashboard' => $avisDashboard, 
-            'avisStatus'    => $avisStatus  
+            'avisStatus'    => $avisStatus, 
+            'avisDelet'     => $avisDelet  
                 
         );
         

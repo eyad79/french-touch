@@ -104,11 +104,13 @@ class Model
 	}
 	
 	//Méthode générique pour modifier un enregistrement avec la requete UPDATE
-	public function update($id, $infos){
+	public function update($id, $infos)
+	{
 		$newValues = '';
 		$first = FALSE; 
 		foreach($infos as $key => $value){
-			if($first == FALSE){
+			if($first == FALSE)
+			{
 				$newValues .= " $key = :$key ";
 				$first = TRUE;
 			}
