@@ -44,10 +44,12 @@
 <!--         <link rel="stylesheet" href="<?= $url ?>/styles/fa-svg-with-js.css">
  -->        <link rel="stylesheet" href="<?= $url ?>/styles/mainStyle.css">
         <link rel="stylesheet" href="<?= $url ?>/styles/styleContact.css">
+        <link rel="stylesheet" href="<?= $url ?>/styles/styleAnimat.css">
 
         <!-- FONTS -->
         <link href="https://fonts.googleapis.com/css?family=Anton" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Fjalla+One" rel="stylesheet">
+
 
        
 

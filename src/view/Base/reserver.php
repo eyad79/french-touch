@@ -15,6 +15,17 @@
 
 <!-- <div class="headerMarge"></div> -->
 
+<div class="container-full layout">
+    
+    <figure>
+        <img src="<?= $url ?>/images/paula-vermeulen-383310-unsplash.jpg" alt="" width="100%" height="600px" >
+        <div class="layoutDiv" >
+            <p class="reserveP" >Reservez</p>
+            
+        </div>
+    </figure>
+</div>
+
 <div class="container">
 
          <div class=" background-form">

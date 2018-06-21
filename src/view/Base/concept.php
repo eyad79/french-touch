@@ -14,10 +14,14 @@
 	
 </style>
 
-<div class="container-full">
+<div class="container-full layout">
 	
 	<figure>
-		<img src="<?= $url ?>/images/Capture.PNG" alt="" width="100%" >
+		<img src="<?= $url ?>/images/Capture.PNG" alt="" width="100%" height="600px" >
+		<div class="layoutDiv" >
+			<p class="conceptP" >Notre Concept</p>
+			
+		</div>
 	</figure>
 </div>
 

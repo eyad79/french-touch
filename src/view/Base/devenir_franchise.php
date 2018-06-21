@@ -13,6 +13,17 @@
 
 <!-- <div class="headerMarge"></div> -->
 
+<div class="container-full layout">
+    
+    <figure>
+        <img src="<?= $url ?>/images/restaurant-et-bar.jpg" alt="" width="100%" height="600px" >
+        <div class="layoutDiv" >
+            <p>Devenire Franchise</p>
+            
+        </div>
+    </figure>
+</div>
+
   <div class="container">
     <div class=" background-form">
 

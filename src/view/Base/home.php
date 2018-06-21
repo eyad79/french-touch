@@ -8,7 +8,11 @@
 
 <div id="pagepiling" class="video-container">
     <div class="section">
-        <iframe width="100%" height="102%" z-index: 10; src="https://www.youtube.com/embed/Tj8ZijSOweY?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        <iframe width="100%" height="102%" z-index: 10; src="https://www.youtube.com/embed/Tj8ZijSOweY?rel=0&amp;autoplay=1" frameborder="0" allow="autoplay; encrypted-media"   allowfullscreen></iframe>
+
+       <!--  <video preload="auto" autoplay="true" loop="loop" muted="muted">
+          <source src="restaurant-french-touch-la-defense.mp4" type="video/mp4">
+       </video> -->
     </div>
 
     <div class="section one">
@@ -19,8 +23,11 @@
 
             <div class="box">
                 <div class="feed">
-                    <h2>Hambourgeoisez-vous !</h2>
-                    <p>Venez savoureux un burger délicieux à notre restaurant. Vous ne serez pas déçu ! N'oubliez pas également nos supers menus qui vous donnerons l'eau à la bouche.</p>
+                    <h2>Hamburgeoisez-vous !</h2>
+                    <p>Venez savoureux un burger délicieux à notre restaurant. Vous ne serez pas déçu ! N'oubliez pas également nos supers menus qui vous donnerons l'eau à la bouche.  <a href="concept">...lire La Suite</a></p>
+                    
+                    <br><br>
+                    <a href="reserver"> <button class="button-text btn-block" name="buttom">Réservez en Ligne</button></a>
                 </div>
             </div>
 
@@ -60,7 +67,7 @@
 
                         </div>
 
-                        <hr/>
+                        <!-- <hr/> -->
                     </div>
 
                     <?php endforeach; ?>
@@ -89,30 +96,47 @@
 
     </div>
 
-        <div class="section one">
-        <div class="container avis-container">
-            <h2>Suivez-nous !</h2>
-        </div>
+    <div class="section one">
         <div class="container container-fb">
-            
-
-          <div id="fb-root"></div>
-            <script>(function(d, s, id) {
-              var js, fjs = d.getElementsByTagName(s)[0];
-              if (d.getElementById(id)) return;
-              js = d.createElement(s); js.id = id;
-              js.src = 'https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.0';
-              fjs.parentNode.insertBefore(js, fjs);
-            }(document, 'script', 'facebook-jssdk'));</script>
-
-
-            <div class="fb-page" data-href="https://www.facebook.com/frenchtouchresto" data-tabs="timeline" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/facebook" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/frenchtouchresto">Facebook</a></blockquote></div>
+            <h2>Suivez-nous !</h2>
+            <div class="row">
+                <div class="col-md-6">
+                    <div id="fb-root"></div>
+                        <script>(function(d, s, id) {
+                          var js, fjs = d.getElementsByTagName(s)[0];
+                          if (d.getElementById(id)) return;
+                          js = d.createElement(s); js.id = id;
+                          js.src = 'https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.0';
+                          fjs.parentNode.insertBefore(js, fjs);
+                        }(document, 'script', 'facebook-jssdk'));</script>
 
 
+                    <div class="fb-page" data-href="https://www.facebook.com/frenchtouchresto" data-tabs="timeline" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true" data-width="300"
+                    data-height="300"><blockquote cite="https://www.facebook.com/facebook" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/frenchtouchresto">Facebook</a></blockquote></div>
+                </div>
+                <div class="col-md-6">
+                     <!-- <a class="twitter-grid" href="https://twitter.com/TwitterMusic/timelines/393773266801659904?ref_src=twsrc%5Etfw">Music Superstars</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script> -->
+                     <a class="twitter-timeline" href="https://twitter.com/_french_touch"
+                      data-width="300"
+                      data-height="300">
+                    Tweets by @TwitterDev
+                    </a>
+                    <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
-        </div>
+                     <!-- <a class="twitter-timeline" href="https://twitter.com/TwitterDev/timelines/539487832448843776?ref_src=twsrc%5Etfw">National Park Tweets - Curated tweets by TwitterDev</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script> -->
+                </div>
+            </div>
 
-        <footer>
+          
+               
+           
+
+
+
+    </div>
+
+        
+ <footer>
                 <div class="centered clearfix">
                     <div class="footer-logo">
                         <a href="<?= $url ?>base/accueil"><img class="logo" src="<?= $url ?>/images/Logo-FrenchTouch.png"></a>
@@ -160,8 +184,9 @@
                 </div>
             </footer>
 
-
     </div>
+
+    
 
 
 

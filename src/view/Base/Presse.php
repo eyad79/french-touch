@@ -12,10 +12,13 @@
 
 <!-- <div class="headerMarge"></div> -->
 
-<div class="container-full">
+<div class="container-full layout">
 	<figure>
-		<img class="" src="<?= $url ?>/images/wood-3157395__480.jpg" alt="" width="100%">
+		<img class="" src="<?= $url ?>/images/wood-3157395__480.jpg" alt="" width="100%" height="600px">
 	</figure>
+	<div class="layoutDiv" >
+		<p class="presseP" >Presses</p>
+	</div>
 </div>
 
 <div class="container">

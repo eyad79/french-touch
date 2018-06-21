@@ -26,7 +26,17 @@ session_destroy();
 
 <div class="headerMarge"></div>
 
-<h1> You have been logged out </h1>
+<div class="container">
+	<div class="row">
+		<div class="col-sm-12 logout-a">
+						
+			<h1 class="text-center logout-h title-form" > You have been logged out </h1>
+			<div class="a">
+				<a class="title-form " href="<?= $url ?>base/accueil">Go At Home Page</a>
+			</div>
+			
 
-<a href="<?= $url ?>base/accueil">Go At Home Page</a>
+		</div>
+	</div>
+</div>
 
