@@ -1024,3 +1024,50 @@ article .box {
 .map {
   margin-bottom: 50px;
 }
+
+
+/*-------layout------*/
+
+.layout {
+  position: relative;
+}
+
+.layoutDiv {
+  display: block;
+  background-color: rgba(255, 255, 255, 0.5);
+  background-size: cover;
+  position: absolute;
+  top: 0; 
+  left: 0; 
+  bottom: 0; 
+  z-index: 2;
+  width: 100%;
+  text-align: center;
+}
+.layoutDiv p {
+  width: 36%;
+  font-size: 7em; 
+  font-weight: 600; 
+  margin-top: 15%;
+  text-shadow: 2px 2px 8px #FFF;
+  /*background-color: rgba(179, 46, 51, 0.6);*/
+  padding: 35px 10px;
+  margin: 20% auto;
+  color: #B32E33;
+  border-bottom: 5px double #B32E33;
+
+}
+.layoutDiv .conceptP, .presseP {
+  width: 30%;
+}
+.layoutDiv .presseP {
+  width: 16%;
+}
+.layoutDiv .reserveP, .contactP {
+  width: 18%;
+}
+.layoutDiv .contactP {
+  width: 18%;
+}
+
+

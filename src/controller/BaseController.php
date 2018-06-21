@@ -36,12 +36,13 @@ class BaseController extends Controller
     
     public function contact(){
         
-        // $erreur = "";
-        $contact_send = '';
+        $erreur = "";
+        $contact_send = "";
+        
         
         if ($_SERVER['REQUEST_METHOD'] == 'POST'){
 
-            $erreur = '';
+            // $erreur = '';
     
             $nom   = filter_var($_POST['nom'],      FILTER_SANITIZE_STRING );
             $sujet = filter_var($_POST['sujet'],    FILTER_SANITIZE_STRING );

@@ -104,7 +104,7 @@ form .fa-paper-plane {
 
 form {
 max-width: 500px;
-margin: 50px auto;
+margin: 35% auto;
 }
 form input, form textarea {
 margin-bottom: 20px;
@@ -190,11 +190,26 @@ padding: 0px 25px 0px 25px;
 }
 
 /* -----login ------- */
-/*
-.login h4 {
-    text-align: center;
-}*/
 
+.login {
+    margin: 80px auto;
+}
+/*
 .form-status {
     margin-top: 0;
+}*/
+
+.row-contact {
+    padding-top: 20px;
+}
+.conta {
+  margin-top: 0;
+}
+.form-paragraphe {
+    background-color: rgba(255, 255, 255, 0.7);
+    color: #B32E33;
+    height: 428px;
+}
+.map iframe {
+    padding-bottom: 20px;
 }
