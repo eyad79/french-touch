@@ -6,11 +6,11 @@
     <div class=" background-form">
         <h2 class="text-center title-form"> Enregister un Avis </h2>
 
-        <form class="class="contact-form" invoyer-avis" action="" method="post"><br />
+        <form class="invoyer-avis" action="" method="post"><br />
             <div class="form-group">
                 <!-- <input class="form-control"ctype="text" name="note" placeholder="note"> -->
                 <label>Votre Note : </label>
-                <select class="no_perssonne" name="note" >
+                <select class="note no_perssonne" name="note" >
 
 	                <?php for ($i=1 ; $i < 6; $i++) :  ?>
 	                	<?php echo "\t",'<option value="', $i ,'">', $i ,'</option>',"\n"; ?>
@@ -18,13 +18,13 @@
                 </select>
             </div>
             <div class="form-group">
-                <input class="nom form-control" type="text" name="nom" placeholder="nom">
+                <input class="nom-avis form-control" type="text" name="nom" placeholder="nom">
             </div>
             <div class="form-group">
-                <input class="form-control" type="date" name="date_avis" >
+                <input class="date-avis form-control" type="date" name="date_avis" >
             </div>
             <div class="form-group">
-                <textarea class="form-control" name="content" placeholder="content"></textarea>
+                <textarea class="content form-control" name="content" placeholder="content"></textarea>
             </div>
             <div class="form-group">
 <!--                 <input class=" form-control" type="text" name="status" placeholder="status">

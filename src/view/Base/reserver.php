@@ -3,7 +3,7 @@
 <style type="text/css">
     
     body {
-        background-image: url("<?= $url ?>/images/Background.jpg");
+        background-image: url("<?= $url ?>/images/background-french-touch.png");
         background-size: cover;
         background-repeat: no-repeat;
 
@@ -15,21 +15,21 @@
 
 <!-- <div class="headerMarge"></div> -->
 
-<div class="container-full layout">
-    
-    <figure>
-        <img src="<?= $url ?>/images/paula-vermeulen-383310-unsplash.jpg" alt="" width="100%" height="600px" >
-        <div class="layoutDiv" >
-            <p class="reserveP" >Reservez</p>
-            
-        </div>
-    </figure>
+<div class="container-full layout picture-header-reserver">
+        <a href=""></a>
 </div>
-
 <div class="container">
 
-         <div class=" background-form">
-         	<h2 class="text-center title-form"> Formulaire de Réservation </h2>
+    <div class="row"> 
+        <div class="col-lg-6 col-sm-12"> 
+             <div class="paragraphe-general text-center">
+                <p class="pGeneral" >Ambiens amnis imosque pedes Cassii montis illius celsi praetermeans funditur in Parthenium mare, Gnaeus Pompeius superato Tigrane regnis Armeniorum abstractas dicioni Romanae coniunxit. Ambiens amnis imosque pedes Cassii montis illius celsi praetermeans funditur.<h2 class="title-form" > Infos pratiques </h2> </p>
+        </div>
+        </div>
+
+        <div class="col-lg-6 col-sm-12"> 
+            <div class=" background-form">
+            <h2 class="text-center title-form"> Réserver en ligne </h2>
 
         <form class="reservation-form" action="" method="POST">
             
@@ -43,7 +43,7 @@
             </div>
             
             <div class="form-group">
-                <input class="prenomR form-control" type="text" name="prenomR" placeholder="Prenom" value="<?php if (isset($prenomR)) { echo $prenomR; } ?>" />
+                <input class="prenomR form-control" type="text" name="prenomR" placeholder="Prénom" value="<?php if (isset($prenomR)) { echo $prenomR; } ?>" />
                 <i class="fa fa-user fa-fw"></i>
                 <span class="asterisx">*</span>
                 <div class="alert alert-danger custom-alert">
@@ -71,12 +71,12 @@
             
             <div class="form-group">
 
-                <h3>Selectez la  Number des Pessonnes </h3>
+                <h3>Sélectionnez le nombre de personnes</h3>
 
                 <select class="no_perssonne" name="no_perssonne" >
-	                <?php for ($i=1 ; $i < 11; $i++) :  ?>
-	                	<?php echo "\t",'<option value="', $i ,'">', $i ,'</option>',"\n"; ?>
-	                <?php endfor; ?>
+                    <?php for ($i=1 ; $i < 11; $i++) :  ?>
+                        <?php echo "\t",'<option value="', $i ,'">', $i ,'</option>',"\n"; ?>
+                    <?php endfor; ?>
                 </select>
 
                 <span class="asterisx">*</span>
@@ -87,13 +87,13 @@
 
             <div class="form-group">
 
-                <h3>Selectez la  Number des Pessonnes </h3>
+                <h3>Sélectionnez l'horaire</h3>
 
                 <select class="heure" name="heure" >
                 <?php for ($h=19 ; $h <= 24; $h++) :  ?>
-                	<?php for ($m=0 ; $m <=45; $m = $m+15) :  ?>
-                		<?php echo "\t",'<option value="', $h . 'h' . $m ,'">', $h . ' ' . 'h' . ' ' . $m ,'</option>',"\n"; ?>
-                	<?php endfor; ?>
+                    <?php for ($m=0 ; $m <=45; $m = $m+15) :  ?>
+                        <?php echo "\t",'<option value="', $h . 'h' . $m ,'">', $h . ' ' . 'h' . ' ' . $m ,'</option>',"\n"; ?>
+                    <?php endfor; ?>
                 <?php endfor; ?>
                 </select>
 
@@ -112,7 +112,7 @@
             </div>
             
             <div class="form-group">
-                <input type="submit" class="btn btn-success btn-block" value="send message" />
+                <input type="submit" class="btn btn-success btn-block" value="Envoyer un message" />
                 <i class="fas fa-paper-plane"></i>
             </div>
 
@@ -134,5 +134,11 @@
 
         </form>
 
+        </div>
+        </div>
 </div>
-</div>  
+</div>
+
+   
+
+<br><br><br>

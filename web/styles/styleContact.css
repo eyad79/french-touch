@@ -1,110 +1,7 @@
 
-/*form {
-    max-width: 500px;
-    margin: 50px auto;
-}
-form input, form textarea {
-    margin-bottom: 20px;
-    padding-left: 40px !important;
-    padding-right: 20px !important;
-}
-.form-control {
-    margin-bottom: 8px;
-    margin-top: 20px;
-}
-h2 {
-    margin-top: 30px;
-}
-form svg {
-    float: left; 
-    position: absolute; 
-    top:9px;
-    left: 8px;
-}
-.btn-success {
-    margin-top: 20px;
-}
-form .fa-user {
-    color: #999;
-}
-form .fa-envelope {
-    top: 12px;
-    color: #999;
-}
-form .fa-phone {
-    top: 12px;
-    color: #999;
-}
-form .fa-paper-plane {
-    color: #fff !important;
-}
-.contact-form .form-group {
-    position: relative; 
-    margin-bottom: 0;
-}
-.contact-form .asterisx {
-    position: absolute;
-    color: #b90d0d;
-    font-size: 30px;
-    right: 10px;
-    top: 0;
-}
-.contact-form .alert-danger {
-    padding: 5px 10px !important;
-    display: none;
-}*/
-
-/* -------Franchaise Vous -------- */
-/*
-.franchaise-form {
-    margin-bottom: 8px;
-    margin-top: 20px;
-}
-
-.franchaise-form .form-group {
-    position: relative; 
-    margin-bottom: 0;
-}
-.franchaise-form .asterisx {
-    position: absolute;
-    color: #b90d0d;
-    font-size: 30px;
-    right: 10px;
-    top: 0;
-}
-.franchaise-form .alert-danger {
-    padding: 5px 10px !important;
-    display: none;
-}*/
-
-
-/* -------Reservation -------- */
-/*
-.reservation-form {
-    margin-bottom: 8px;
-    margin-top: 20px;
-}
-
-.reservation-form .form-group {
-    position: relative; 
-    margin-bottom: 0;
-}
-.reservation-form .asterisx {
-    position: absolute;
-    color: #b90d0d;
-    font-size: 30px;
-    right: 10px;
-    top: 0;
-}
-.reservation-form .alert-danger {
-    padding: 5px 10px !important;
-    display: none;
-}*/
-
-
 form {
 max-width: 500px;
-margin: 35% auto;
+margin: 5% auto;
 }
 form input, form textarea {
 margin-bottom: 20px;
@@ -186,7 +83,7 @@ margin: 1px auto;
 margin-top: 115px;
 }
 .contact-form, .franchaise-form, .reservation-form {
-padding: 0px 25px 0px 25px;
+padding: 0px 25px 5px 25px;
 }
 
 /* -----login ------- */
@@ -206,10 +103,24 @@ padding: 0px 25px 0px 25px;
   margin-top: 0;
 }
 .form-paragraphe {
-    background-color: rgba(255, 255, 255, 0.7);
+    font-family: 'Fjalla One', sans-serif;
+    font-size: 18px;
     color: #B32E33;
+    background-color: rgba(255, 255, 255, 0.7);
     height: 428px;
 }
 .map iframe {
     padding-bottom: 20px;
+}
+
+.formYoutube {
+    margin: 20px auto;
+}
+.paragraphe-general{
+    margin-top: 115px;
+}
+
+/* RESERVER */
+.form-group h3{
+    font-size: 20px !important;
 }

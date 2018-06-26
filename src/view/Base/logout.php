@@ -5,11 +5,6 @@ session_start();
 session_destroy();
 
 // echo 'You have been logged out. <a href="/">Go back</a>' . '<br>' ;
-// echo 'You have been logged out. <a href="/">Go back</a>' . '<br>' ;
-// echo 'You have been logged out. <a href="/">Go back</a>' . '<br>' ;
-// echo 'You have been logged out. <a href="/">Go back</a>' . '<br>' ;
-// echo 'You have been logged out. <a href="/">Go back</a>' . '<br>' ;
-// echo 'You have been logged out. <a href="/">Go back</a>' . '<br>' ;
 
 ?>
 
@@ -31,6 +26,7 @@ session_destroy();
 		<div class="col-sm-12 logout-a">
 						
 			<h1 class="text-center logout-h title-form" > You have been logged out </h1>
+			
 			<div class="a">
 				<a class="title-form " href="<?= $url ?>base/accueil">Go At Home Page</a>
 			</div>

@@ -4,30 +4,31 @@
 <style type="text/css">
     
     body {
-        background-image: url("<?= $url ?>/images/background-.jpg");
-        background-size: cover;
-        background-repeat: no-repeat;
+        background-image: url("<?= $url ?>/images/background_.jpg");
+		background-size: contain;
+		background-repeat: repeat;
     }
     
 </style>
 
 <!-- <div class="headerMarge"></div> -->
 
-<div class="container-full layout">
-    
-    <figure>
-        <img src="<?= $url ?>/images/restaurant-et-bar.jpg" alt="" width="100%" height="600px" >
-        <div class="layoutDiv" >
-            <p>Devenire Franchise</p>
-            
-        </div>
-    </figure>
+<div class="container-full layout picture-header-devenir-franchise">
+        <a href=""></a>
 </div>
 
-  <div class="container">
-    <div class=" background-form">
+<div class="container">
 
-        <h2 class="text-center title-form"> Devenir Franchaisé </h2>
+<div class="row">
+    <div class="col-lg-6 col-sm-12">
+        <div class="paragraphe-general text-center">
+                <p class="pGeneral" >Ambiens amnis imosque pedes Cassii montis illius celsi praetermeans funditur in Parthenium mare, Gnaeus Pompeius superato Tigrane regnis Armeniorum abstractas dicioni Romanae coniunxit. Ambiens amnis imosque pedes Cassii montis illius celsi praetermeans funditur.<h2 class="title-form" > Infos pratiques </h2> </p>
+        </div>
+    </div> 
+    <div class="col-lg-6 col-sm-12">
+        <div class=" background-form">
+
+        <h2 class="text-center title-form"> Devenir franchisé </h2>
 
         <form class="franchaise-form" action="" method="POST">
             
@@ -41,7 +42,7 @@
             </div>
             
             <div class="form-group">
-                <input class="prenomF form-control" type="text" name="prenomF" placeholder="Prenom" value="<?php if (isset($prenomF)) { echo $prenomF; } ?>" />
+                <input class="prenomF form-control" type="text" name="prenomF" placeholder="Prénom" value="<?php if (isset($prenomF)) { echo $prenomF; } ?>" />
                 <i class="fa fa-user fa-fw"></i>
                 <span class="asterisx">*</span>
                 <div class="alert alert-danger custom-alert">
@@ -59,7 +60,7 @@
             </div>
 
             <div class="form-group">
-                <input class="ville form-control" type="text" name="ville" placeholder="Ville de la Franchaisé" value="<?php if (isset($ville)) { echo $ville; } ?>" />
+                <input class="ville form-control" type="text" name="ville" placeholder="Ville de la franchise" value="<?php if (isset($ville)) { echo $ville; } ?>" />
                 <i class="fas fa-map-marker"></i>
                 <span class="asterisx">*</span>
                 <div class="alert alert-danger custom-alert">
@@ -77,20 +78,16 @@
             </div>
 
             <div class="form-group">
-            	<h2> Avez-Vous un Local ? </h2>
+                <h2 style="font-size: 20px !important;"> Avez-vous un local ? </h2>
                 <div class="form-check form-check-inline">
-					
-					<label class="form-check-label" for="inlineRadio1"><input class="local form-check-input" type="radio" name="local" id="inlineRadio1" value="Oui">Oui</label>
-				</div>
-				<div class="form-check form-check-inline">
-					  
-					  <label class="form-check-label" for="inlineRadio2"><input class="local form-check-input" type="radio" name="local" id="inlineRadio2" value="Non">Non</label>
-				</div>
-                
-                <!-- <span class="asterisx">*</span>
-                <div class="alert alert-danger custom-alert">
-                     is not valid
-                </div> -->
+                    
+                    <label class="form-check-label" for="inlineRadio1"><input class="local form-check-input" type="radio" name="local" id="inlineRadio1" value="Oui">Oui</label>
+                </div>
+                <div class="form-check form-check-inline">
+                      
+                      <label class="form-check-label" for="inlineRadio2"><input class="local form-check-input" type="radio" name="local" id="inlineRadio2" value="Non">Non</label>
+                </div>
+              
             </div>
 
             <div class="form-group">
@@ -102,7 +99,7 @@
             </div>
             
             <div class="form-group">
-                <input type="submit" class="btn btn-success btn-block" value="send message" />
+                <input type="submit" class="btn btn-success btn-block" value="Envoyer un message" />
                 <i class="fas fa-paper-plane"></i>
             </div>
 
@@ -124,7 +121,12 @@
 
         </form>
     </div>
+    </div> 
+</div>
 
-</div>  
+    
+</div>
+
+ <br><br><br>
 
 

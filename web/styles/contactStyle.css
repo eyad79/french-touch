@@ -1,4 +1,4 @@
-/*
+
 form {
     max-width: 500px;
     margin: 50px auto;
@@ -14,12 +14,15 @@ form input, form textarea {
 }
 h2 {
     margin-top: 30px;
+    max-width: 500px;
+    margin: 10px auto;
 }
 form svg {
     float: left; 
     position: absolute; 
     top:9px;
     left: 8px;
+    color: #b90d0d !important;
 }
 .btn-success {
     margin-top: 20px;
@@ -54,124 +57,36 @@ form .fa-paper-plane {
     display: none;
 }
 
-*/
-
-
-/*
-
-.franchaise-form {
-    border: 3px solid #f00;
-}
-.aaa {
-    font-size: 50px ; color: #00f;
+@font-face {
+ font-family: "BebasNeue";
+ src: url("../fonts/BebasNeue.ttf");
 }
 
-.bbb {
-    font-size: 50px; color: #00f;
-}*/
-
-
-
-
-/*
-form {
-    max-width: 500px;
-    margin: 50px auto;
-}
-form input, form textarea {
-    margin-bottom: 20px;
-    padding-left: 40px !important;
-    padding-right: 20px !important;
-}
-.form-control {
-    margin-bottom: 8px;
-    margin-top: 20px;
-}
-h2 {
-    margin-top: 30px;
-}
-form svg {
-    float: left; 
-    position: absolute; 
-    top:9px;
-    left: 8px;
-}
-.btn-success {
-    margin-top: 20px;
-}
-form .fa-user {
-    color: #999;
-}
-form .fa-envelope {
-    top: 12px;
-    color: #999;
-}
-form .fa-phone {
-    top: 12px;
-    color: #999;
-}
-form .fa-paper-plane {
-    color: #fff !important;
-}
-.contact-form .form-group {
-    position: relative; 
-    margin-bottom: 0;
-}
-.contact-form .asterisx {
-    position: absolute;
-    color: #b90d0d;
-    font-size: 30px;
-    right: 10px;
-    top: 0;
-}
-.contact-form .alert-danger {
-    padding: 5px 10px !important;
-    display: none;
-}
-*/
-/* -------Franchaise Vous -------- */
-/*
-.franchaise-form {
-    margin-bottom: 8px;
-    margin-top: 20px;
+@font-face {
+ font-family: "ThirstyRough";
+ src: url("../fonts/ThirstyRough.otf");
 }
 
-.franchaise-form .form-group {
-    position: relative; 
-    margin-bottom: 0;
-}
-.franchaise-form .asterisx {
-    position: absolute;
-    color: #b90d0d;
-    font-size: 30px;
-    right: 10px;
-    top: 0;
-}
-.franchaise-form .alert-danger {
-    padding: 5px 10px !important;
-    display: none;
+.btn-block{
+    font-family: 'BebasNeue', serif;
+    background-image:linear-gradient(#AC2C31, #561619);
+    border: none;
 }
 
-*/
-/* -------Reservation -------- */
-/*
-.reservation-form {
-    margin-bottom: 8px;
-    margin-top: 20px;
+.title-form{
+    font-family: 'BebasNeue', serif;
+    font-size: 28px;
+    padding: 4px;
+    background-image:linear-gradient(#AC2C31, #561619);
+    color: #fff;
+    text-align: center !important;
 }
 
-.reservation-form .form-group {
-    position: relative; 
-    margin-bottom: 0;
+.background-form{
+    background-color: #fff;
+    max-width: 500px ; 
+    margin: 1px auto;
 }
-.reservation-form .asterisx {
-    position: absolute;
-    color: #b90d0d;
-    font-size: 30px;
-    right: 10px;
-    top: 0;
+.contact-form{
+    padding: 0px 25px 0px 25px;
 }
-.reservation-form .alert-danger {
-    padding: 5px 10px !important;
-    display: none;
-}*/

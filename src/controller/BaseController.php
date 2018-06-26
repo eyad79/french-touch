@@ -8,14 +8,27 @@ class BaseController extends Controller
     public function accueil(){
         
        // 1 : Si besoin d'infos de la BDD... on demande à notre model ($this -> getModel()) les infos. 
-        $avis = $this -> getModel() -> getAllAvis();
+        $avis           = $this -> getModel() -> getAllAvis();
+        //$lienYoutube    = $this -> getModel() -> getLienYoutube();
         
+        // $lienYoutube = '';
+        
+        // if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+
+        //     $lien = $_POST['lien']; 
+
+        //     $lienYoutube    = $this -> getModel() -> getLienYoutube();
+        //     var_dump($lienYoutube);
+
+        // }
+
         
        // Retourner la vue. 
         
         $params= array(
-            'title' => 'Accueil',
-            'avis'  => $avis    
+            'title'         => 'Accueil',
+            'avis'          => $avis , 
+            // 'lienYoutube'   => $lienYoutube   
         );
         
         return $this -> render('layout.php', 'home.php', $params);
@@ -43,11 +56,17 @@ class BaseController extends Controller
         if ($_SERVER['REQUEST_METHOD'] == 'POST'){
 
             // $erreur = '';
-    
-            $nom   = filter_var($_POST['nom'],      FILTER_SANITIZE_STRING );
-            $sujet = filter_var($_POST['sujet'],    FILTER_SANITIZE_STRING );
-            $email = filter_var($_POST['email'],    FILTER_SANITIZE_EMAIL ); 
-            $msg   = filter_var($_POST['message'],  FILTER_SANITIZE_STRING );
+                
+           // $nom     = filter_var($_POST['nom'],FILTER_SANITIZE_STRING );
+           // $sujet   = filter_var($_POST['sujet'],FILTER_SANITIZE_STRING );
+           // $email   = filter_var($_POST['email'],FILTER_SANITIZE_EMAIL ); 
+           // $msg     = filter_var($_POST['message'],FILTER_SANITIZE_STRING );
+
+           $nom     = htmlspecialchars($_POST['nom']);
+           $sujet   = htmlspecialchars($_POST['sujet']);
+           $email   = htmlspecialchars($_POST['email']);
+           $msg     = htmlspecialchars($_POST['msg']);
+          
 
             // echo $nom   . '<br>';
             // echo $sujet . '<br>';
@@ -132,13 +151,22 @@ class BaseController extends Controller
 
         if ($_SERVER['REQUEST_METHOD'] == 'POST'){
     
-            $nomF           = filter_var($_POST['nomF'],        FILTER_SANITIZE_STRING );
-            $prenomF        = filter_var($_POST['prenomF'],     FILTER_SANITIZE_STRING );
-            $emailF         = filter_var($_POST['emailF'],      FILTER_SANITIZE_EMAIL ); 
-            $ville          = filter_var($_POST['ville'],       FILTER_SANITIZE_STRING );
-            $nomSociete     = filter_var($_POST['nomSociete'],  FILTER_SANITIZE_STRING );
-            $local          = filter_var($_POST['local'],       FILTER_SANITIZE_STRING );
-            $msgF           = filter_var($_POST['messageF'],    FILTER_SANITIZE_STRING );
+            // $nomF           = filter_var($_POST['nomF'],        FILTER_SANITIZE_STRING );
+            // $prenomF        = filter_var($_POST['prenomF'],     FILTER_SANITIZE_STRING );
+            // $emailF         = filter_var($_POST['emailF'],      FILTER_SANITIZE_EMAIL ); 
+            // $ville          = filter_var($_POST['ville'],       FILTER_SANITIZE_STRING );
+            // $nomSociete     = filter_var($_POST['nomSociete'],  FILTER_SANITIZE_STRING );
+            // $local          = filter_var($_POST['local'],       FILTER_SANITIZE_STRING );
+            // $msgF           = filter_var($_POST['messageF'],    FILTER_SANITIZE_STRING );
+
+           $nomF            = htmlspecialchars($_POST['nomF']);
+           $prenomF         = htmlspecialchars($_POST['prenomF']);
+           $emailF          = htmlspecialchars($_POST['emailF']);
+           $ville           = htmlspecialchars($_POST['ville']);
+           $nomSociete      = htmlspecialchars($_POST['nomSociete']);
+           $local           = htmlspecialchars($_POST['local']);
+           $msgF            = htmlspecialchars($_POST['msgF']);
+        
 
             // traitements pour vérifier le contenu des champs...
 
@@ -202,10 +230,15 @@ class BaseController extends Controller
 
         if ($_SERVER['REQUEST_METHOD'] == 'POST'){
     
-            $nomR           = filter_var($_POST['nomR'],        FILTER_SANITIZE_STRING );
-            $prenomR        = filter_var($_POST['prenomR'],     FILTER_SANITIZE_STRING );
-            $cell           = filter_var($_POST['cell'],        FILTER_SANITIZE_NUMBER_INT );
-            $msgR           = filter_var($_POST['messageR'],    FILTER_SANITIZE_STRING );
+            // $nomR           = filter_var($_POST['nomR'],        FILTER_SANITIZE_STRING );
+            // $prenomR        = filter_var($_POST['prenomR'],     FILTER_SANITIZE_STRING );
+            // $cell           = filter_var($_POST['cell'],        FILTER_SANITIZE_NUMBER_INT );
+            // $msgR           = filter_var($_POST['messageR'],    FILTER_SANITIZE_STRING );
+
+            $nomR            = htmlspecialchars($_POST['nomR']);
+            $prenomR         = htmlspecialchars($_POST['prenomR']);
+            $cell            = htmlspecialchars($_POST['cell']);
+            $msgR            = htmlspecialchars($_POST['msgR']);
 
             // traitements pour vérifier le contenu des champs...
 
@@ -272,14 +305,16 @@ class BaseController extends Controller
          if ($_SERVER['REQUEST_METHOD'] == 'POST')
         {
 
-            $username   = $_POST['username']; 
-            $password   = $_POST['password'];
+            $username   = htmlspecialchars($_POST['username']); 
+            $password   = htmlspecialchars($_POST['password']);
             $hashedPass = sha1($password); 
             $count      = '';
 
         // echo $username . ' '  . $passowrd . ' ' . $hashedPass ;
 
             $userget    = $this -> getModel() ->admin();
+
+
 
             // if ($count > 0) 
             // {
@@ -315,16 +350,22 @@ class BaseController extends Controller
      public function dashboard(){
 
         // 1 : Si besoin d'infos de la BDD... on demande à notre model ($this -> getModel()) les infos. 
-        $avisDashboard  = $this -> getModel() -> getAllAvisDashboard();
+        $avisDashboard      = $this -> getModel() -> getAllAvisDashboard();
+        $reserverDAshboard  = $this -> getModel() -> getReserver();
         
-        $avisStatus     = '';
-        $avisDelet      = '';
+        $avisStatus         = '';
+        $avisDelet          = '';
+        $deletReservation   = '';
+        $addLienYoutube     = '';
 
          if ($_SERVER['REQUEST_METHOD'] == 'POST') 
          {
 
-            $id_avis    = filter_var($_POST['id_avis'],  FILTER_SANITIZE_NUMBER_INT );
-            $status     = filter_var($_POST['status'],   FILTER_SANITIZE_NUMBER_INT );
+            // $id_avis    = filter_var($_POST['id_avis'],  FILTER_SANITIZE_NUMBER_INT );
+            // $status     = filter_var($_POST['status'],   FILTER_SANITIZE_NUMBER_INT );
+
+            $id_avis   = htmlspecialchars($_POST['id_avis']); 
+            $status   = htmlspecialchars($_POST['status']); 
             
 
             $formErrors = array (); 
@@ -334,7 +375,7 @@ class BaseController extends Controller
                  $formErrors[] = 'id is not valid' ;
              }
 
-            if (strlen($status)>2)            
+            if (strlen($status)>1)            
             {
 
                 $formErrors[] = 'status is not valid' ;
@@ -349,7 +390,7 @@ class BaseController extends Controller
         if ($_SERVER['REQUEST_METHOD'] == 'POST') 
          {
 
-            $id_avis_delet    = filter_var($_POST['id_avis_delet'],  FILTER_SANITIZE_NUMBER_INT );
+            $id_avis_delet    = htmlspecialchars($_POST['id_avis_delet']);
 
             $formErrors = array (); 
 
@@ -365,16 +406,47 @@ class BaseController extends Controller
             echo 'erreur';
         }
 
+        if ($_SERVER['REQUEST_METHOD'] == 'POST') 
+         {
+
+            $id_reserver_delet    = htmlspecialchars($_POST['id_reserver']);
+
+            $formErrors = array (); 
+
+            if (strlen($id_reserver_delet)<0)
+             {
+                 $formErrors[] = 'id is not valid' ;
+             }
+
+
+            $avisDelet     = $this -> getModel() -> deletReservation();
+        
+        }else {
+            echo 'erreur';
+        }
+
+
+        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+
+            $nom        = htmlspecialchars($_POST['nom']);
+
+            $addLienYoutube   = $this -> getModel() -> sendLienYoutube();
+
+         }
+
 
 
  
        // Retourner la vue. 
         
         $params= array(
-            'title'         => 'dashboard',
-            'avisDashboard' => $avisDashboard, 
-            'avisStatus'    => $avisStatus, 
-            'avisDelet'     => $avisDelet  
+            'title'             => 'dashboard',
+            'avisDashboard'     => $avisDashboard, 
+            'avisStatus'        => $avisStatus, 
+            'avisDelet'         => $avisDelet , 
+            'reserverDAshboard' => $reserverDAshboard, 
+            'deletReservation'  => $deletReservation, 
+            'addLienYoutube'    => $addLienYoutube
                 
         );
         
@@ -402,10 +474,10 @@ class BaseController extends Controller
         $sendAvis = '';
          if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
-            $note       = filter_var($_POST['note'],        FILTER_SANITIZE_NUMBER_INT );
-            $nom        = filter_var($_POST['nom'],         FILTER_SANITIZE_STRING );
-            $date_avis  = filter_var($_POST['date_avis'],   FILTER_SANITIZE_NUMBER_INT ); 
-            $content    = filter_var($_POST['content'],     FILTER_SANITIZE_STRING );
+            $note       = htmlspecialchars($_POST['note']);
+            $nom        = htmlspecialchars($_POST['nom']);
+            $date_avis  = htmlspecialchars($_POST['date_avis']); 
+            $content    = htmlspecialchars($_POST['content']);
 
             $formErrors = array (); 
 
@@ -427,6 +499,16 @@ class BaseController extends Controller
         );
         
         return $this -> render('layout.php', 'addAvis.php', $params);
+    }
+
+     public function mentionsLegales(){
+        
+        $params = array(
+            'title' => 'mentionsLegales'   
+        );
+        
+        return $this -> render('layout.php', 'mentionsLegales.php', $params);
+        
     }
     
    

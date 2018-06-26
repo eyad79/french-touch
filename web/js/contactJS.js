@@ -323,6 +323,79 @@ $(function () {
         
     });
 
+    // /*-----add avis ----------*/
+    //  var noteError      = true,
+    //      nomAvisError   = true,
+    //      dateAvisError  = true,
+    //      contentError   = true,
+       
+
+    
+
+    // $('.note').blur(function () {
+
+    //     if ($(this).val().length <= 0) {
+    //         $(this).css('border', '1px solid #f00').parent().find('.custom-alert').fadeIn(500).end().find('.asterisx').fadeIn(500);
+    //         noteError = true;
+
+    //     } else {
+    //         $(this).css('border', '1px solid #080').parent().find('.custom-alert').fadeOut(500).end().find('.asterisx').fadeOut(500);
+    //         noteError = false;
+    //     }
+      
+    // });
+
+
+    // $('.nom-avis').blur(function () {
+
+    //     if ($(this).val().length <= 2) {
+    //         $(this).css('border', '1px solid #f00').parent().find('.custom-alert').fadeIn(500).end().find('.asterisx').fadeIn(500);
+    //         nomAvisError = true;
+
+    //     } else {
+    //         $(this).css('border', '1px solid #080').parent().find('.custom-alert').fadeOut(500).end().find('.asterisx').fadeOut(500);
+    //         nomAvisError = false;
+    //     }
+      
+    // });
+
+
+    // $('.date-avis').blur(function () {
+
+    //     if ($(this).val().length < 10) {
+    //         $(this).css('border', '1px solid #f00').parent().find('.custom-alert').fadeIn(500).end().find('.asterisx').fadeIn(500);
+    //         dateAvisError = true;
+
+    //     } else {
+    //         $(this).css('border', '1px solid #080').parent().find('.custom-alert').fadeOut(500).end().find('.asterisx').fadeOut(500);
+    //         dateAvisError = false;
+    //     }
+      
+    // });
+
+    // $('.content').blur(function () {
+
+    //     if ($(this).val().length <= 5) {
+    //         $(this).css('border', '1px solid #f00').parent().find('.custom-alert').fadeIn(500).end().find('.asterisx').fadeIn(500);
+    //         contentError = true;
+
+    //     } else {
+    //         $(this).css('border', '1px solid #080').parent().find('.custom-alert').fadeOut(500).end().find('.asterisx').fadeOut(500);
+    //         contentError = false;
+    //     }
+      
+    // });
+
+   
+    // $('.invoyer-avis-avis').submit(function (e) {
+    //     if (noteError === true || nomAvisError === true || dateAvisError === true || contentError === true) {
+    //         e.preventDefault();
+    //         $('.note, .nom-avis, .date-avis, content').blur();
+    //     }
+        
+    // });
+
+
 
 });
 

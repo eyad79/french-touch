@@ -1,26 +1,9 @@
-/*
-body {
-    padding: 0; 
-    background: #fafafa;
-    text-shadow: 1px 1px 1px #fff;
-}
-
-footer {
-    height: 200px;
-    background-color: #ddd;
-    font-size: 20px;
-}
-
-*/
-
-/*box-sizing: border-box;a*/
-
-/* == fonts == */
 
 .headerMarge {
   height: 100px;
 }
 
+/* == fonts == */
 @font-face {
  font-family: "ThirstyRough";
  src: url("../fonts/ThirstyRough.otf");
@@ -130,10 +113,6 @@ body {
     position: static;
     opacity: 1;
 }
-#main-header--social-global{
-    position: absolute;
-    opacity: 0;
-}
 .main-header--nav-logo-burger{
     position: static;
     opacity: 1;
@@ -155,8 +134,8 @@ button{
 }
 @media screen and (min-width: 1024px) {
     .main-header--logo-img {
-    width: 80%;
-    margin-left: -8px;
+        width: 80%;
+        margin-left: -8px;
     }
     .main-header--nav-item2{
         position: static;
@@ -165,21 +144,6 @@ button{
     .main-header--nav-logo-burger{
         position: absolute;
         opacity: 0;
-    }
-    #main-header--social-global{
-    position: fixed;
-    margin-top: 10%;
-    width: 60px;
-    height: 240px;
-    background-color: white;
-    color: white;
-    font-size: 30px;
-    vertical-align: middle;
-    padding-top: 10px;
-    text-align: center;
-    line-height: 55px;
-    opacity: 1;
-    z-index: 100;
     }
     .icons-burger{
     position: absolute;
@@ -292,16 +256,12 @@ footer {
   background-image: url(../images/background-nav.png);
   background-size: cover;
   background-repeat: no-repeat;
- /* position: absolute;
-  margin: 0;*/
   bottom: 0;
   width: 100%;
   font-family: 'Anton', sans-serif;
   border-bottom: 12px solid #B12C31;
   padding-top: 20px;
-
-
-/*  margin-bottom: -192px;*/
+  margin-top: -20px;
 }
 footer .centered {
   max-width: 1200px;
@@ -349,6 +309,9 @@ footer .copyright {
 
 /* == responsive tablet == */
 @media only screen and (max-width: 749px) {
+    .picture-header-presse, .picture-header-reserver, .picture-header-concept, .picture-header-devenir-franchise, .picture-header-contact{
+    height: 200px !important;
+}
 footer{      
   background-size: 200%;
 }
@@ -401,7 +364,6 @@ footer{
     padding: 10px 20px;
     border-top: #000 1px solid;
     cursor: pointer;
-    /* Down Arrows */
   }
   footer .centered .footer-navigation .footer-links-container h3::after {
     float: right;
@@ -441,10 +403,11 @@ footer{
 footer h3 {
   font-weight: lighter;
   margin-bottom: 0;
+  font-size: 21px !important;
 }
 footer p, footer li {
   font-weight: 400;
-  margin: 10px 0;
+  /*margin: 10px 0;*/
   font-family: 'Fjalla One', sans-serif;
 }
 footer a {
@@ -458,83 +421,10 @@ footer a:hover {
 }
 
 
-/*  page d'accueil  */
-
-/* == fonts == */
-/*@font-face {
- font-family: "ThirstyRough";
- src: url("../fonts/ThirstyRough.otf");
-}
-@font-face {
- font-family: "BebasNeue";
- src: url("../fonts/BebasNeue.ttf");
-}
-:root {
-    --line-height: 30px;
-}
-* {
-    box-sizing: border-box;
-}
-*, *::after, *::before {
-	-webkit-box-sizing: border-box;
-	   -moz-box-sizing: border-box;
-       -ms-box-sizing: border-box;
-	        box-sizing: border-box;
-}
-::-webkit-scrollbar {
-  width: 0px;
-  height: 0px;
-}
-body {
-    margin: 0;
-    background-color: white;
-    line-height: var(--line-height);
-    min-height: 100%;
-    padding-top: 82px;
-}*/
-/*.title-avis{
-    margin-top: 160px;
-}*/
-/*.container-avis{
-    margin-bottom: -50px;
-    display: inline;*/
-/*}
-.cont-avis {
-  display: inline-flex !important;
-  padding-bottom: 50px;
-  padding-left: 40%;
-  text-align: center;
-  
-}
-.avis-client{
-  width: 350px;
-
-  
-}
-.avis-a {
-  float: left; 
-}
-.pseudo-avis{
-    font-family: 'Fjalla One', sans-serif;
-    font-size: 18px;
-    text-align: center;
-}
-.date-avis{
-    font-family: 'Fjalla One', sans-serif;
-    font-size: 14px;
-    text-align: center;
-}
-.paragraphe-avis{
-    text-align: center;
-    line-height: 22px;
-}*/
 
 .avis-container {
   text-align: center;
-  padding-top: 100px;
   margin-bottom: 20px;
-  
-
 }
 
 
@@ -542,18 +432,6 @@ body {
   flex-wrap: nowrap !important;
   overflow: hidden;
 }
-/*
-@media screen and (min-width: 1024px) { 
-.avis-client {
-  flex-wrap: nowrap !important;
-}
-}
-*/
-/*@media screen and (max-width: 767px) { 
-.avis-container {
-  margin-top: -100px;
-}
-}*/
 
 
 .avis-nom{
@@ -565,7 +443,6 @@ body {
     color: #fff;
 }
 .avis-container h2 {
- /* margin-bottom: 30px;*/
   font-family: 'BebasNeue', serif;
   font-size: 28px;
   font-weight: 400;
@@ -576,9 +453,9 @@ body {
   text-shadow: 1px 1px 4px #561619;
 }
 .avis-container p:not(.avis-nom) {
-  font-family: 'Fjalla', serif;
-  font-size: 2em;
-  color: black;
+   font-family: 'Fjalla', serif;
+   font-size: 18px;
+   color: black;
 }
 .avis-container .avis-style {
   background: rgba(255, 255, 255, 0.7);
@@ -594,32 +471,12 @@ body {
 
 
 @media screen and (min-width: 1024px) { 
-/*.title-avis{
-    margin-top: 220px;
-} 
-.title-avis h2 {
-  font-family: "BebasNeue", serif;
-  font-size: 28px;
-  color: black;
-  font-weight: 400;
-  letter-spacing: 1px;
-  text-align: center;
-  margin-top: -300px;
-}  
-.container-avis{
-    margin-bottom: -50px;
-    display: inline-block;
-    width: 30%;
-    margin-left: 1%;
-    margin-right: 1%;
-}*/ 
+
 }
 .box img{
     width: 100%;
 }
-/*img, article, section{
-    display: block;
-}*/
+
 .box h1, h2, h3 {
   padding: 5px 10px 10px;
 }
@@ -664,9 +521,10 @@ section {
 .box .feed {
   height: 100%;
   overflow: hidden;
-  padding: 0 10px;
+  padding: 0 10px 0 10% ;
   position: relative;
-  width: initial;
+  /*width: initial;*/
+  width: 80%;
 }
 .box .feed h2 {
   font-family: "ThirstyRough", serif;
@@ -767,6 +625,9 @@ article .box {
   }
 }
 @media only screen and (min-width: 767px) and (max-width: 991px) {
+    .picture-header-presse, .picture-header-reserver, .picture-header-concept, .picture-header-devenir-franchise, .picture-header-contact{
+    height: 200px !important;
+}
   .box {
     display: inline-block;
     margin: 0 -2px;
@@ -778,6 +639,9 @@ article .box {
     }
 }
 @media only screen and (max-width: 528px) {
+    .picture-header-presse, .picture-header-reserver, .picture-header-concept, .picture-header-devenir-franchise, .picture-header-contact{
+    height: 200px !important;
+}
 .box .feed h2{
     font-size: 22px;
 }
@@ -807,6 +671,9 @@ article .box {
 }
 }
 @media only screen and (max-width: 240px) {
+    .picture-header-presse, .picture-header-reserver, .picture-header-concept, .picture-header-devenir-franchise, .picture-header-contact{
+    height: 200px !important;
+}
 .box .feed p {font-size: 12px;}
 }
 .two{
@@ -846,8 +713,7 @@ article .box {
 
 }
 .img-burger {
-  max-width: 100%;
-  /*height: 100%;*/
+    max-width: 100%;
 }
 
 .container-press {
@@ -860,6 +726,7 @@ article .box {
 }
 .button-text {
   cursor: pointer;
+  padding: 5px;
 }
 .text-burger2 {
 /*  margin-top: 10%;*/
@@ -962,10 +829,14 @@ article .box {
 }
 
 .btnaDdAvis {
-  width:50%;
-  font-size: 3em;
-  margin-left: 25%; 
-  margin-right: 25%;
+ width:50%;
+ font-size: 24px;
+ margin-left: 25%;
+ margin-right: 25%;
+}
+
+.btnaDdAvis:hover {
+    color: black;
 }
 
 .h2-container {
@@ -997,7 +868,7 @@ article .box {
   font-family: 'Fjalla', serif;
   font-size: 2em;
   color: black;
-  padding-left: 10px;
+/*  padding-left: 10px;*/
 }
 
 /*--------Logout---------*/
@@ -1068,6 +939,146 @@ article .box {
 }
 .layoutDiv .contactP {
   width: 18%;
+}
+
+
+.avisClient {
+  padding-top: 100px;
+}
+.paragraphe-general {
+  font-size: 14px;
+  font-family: 'Fjalla One', sans-serif;
+  background-color: rgba(255, 255, 255, 0.7);
+  color: #B32E33;
+  /*padding: 4%;
+    font-size: 2em;*/
+  padding: 5px 10px;
+}
+/* PAGE CONCEPT */
+.paragraphe-concept{
+    font-size: 14px;
+    font-family: 'Fjalla One', sans-serif;
+    background-color: rgba(255, 255, 255, 0.7);
+    color: #B32E33;
+    padding: 70px 10px !important;
+    margin-top: 0p !important;
+}
+    
+/* PAGE GENERAL */
+.paragraphe-page-press{
+    font-size: 14px;
+    font-family: 'Fjalla One', sans-serif;
+    background-color: rgba(255, 255, 255, 0.7);
+    color: #B32E33;
+    padding: 1px 10px !important;
+    margin-top: 0p !important;
+} 
+.pGeneral {
+  /*padding: 8px;*/
+  padding: 16px;
+  text-align: justify;
+  line-height: 22px;
+}
+.title-paragraphe{
+    font-family: 'Fjalla One', sans-serif; 
+    font-size: 18px;
+    font-weight: bold;
+    color: #B32E33;
+    text-decoration: none;
+}
+
+/* SOCIAL MEDIA */
+.title-reseau{
+   color: white !important;
+}
+
+
+
+
+#main-header--social-global{
+   position: absolute;
+   opacity: 0;
+}
+@media screen and (min-width: 1024px) {
+   #main-header--social-global{
+   position: fixed;
+   margin-top: 15%;
+   width: 80px;
+   background-color: rgba(255, 255, 255, 0.4);
+   color: white;
+   font-size: 30px;
+   vertical-align: middle;
+   padding: 20px 20px 20px 0px;
+   text-align: center;
+   line-height: 55px;
+   opacity: 1;
+   z-index: 8;
+   }
+}
+ 
+/* == global icons == */
+#global-icons{
+height: 70px;
+    width: 100px;
+    overflow: hidden;
+    display: inline-block;
+    background-size: 55px 55px;
+    background-repeat: no-repeat;
+    vertical-align: middle;
+    display: inline-block;
+    margin-left: 10px;
+}
+
+/* == facebook icon == */
+.icon-facebook{
+   background-image: url("../images/icon-facebook.svg");
+}
+.icon-facebook:hover{
+   background-image: url("../images/icon-facebook-hover.svg");
+}
+/* == linkedin icon == */
+.icon-linkedin{
+   background-image: url("../images/icon-twitter.svg");
+}
+.icon-linkedin:hover{
+   background-image: url("../images/icon-twitter-hover.svg");
+}
+/* == instagram icon == */
+.icon-instagram{
+   background-image: url("../images/icon-instagram.svg");
+}
+.icon-instagram:hover{
+   background-image: url("../images/icon-instagram-hover.svg");
+}
+/* == youtube icon == */
+.icon-youtube{
+   background-image: url("../images/icon-youtube.svg");
+}
+.icon-youtube:hover{ 
+   background-image: url("../images/icon-youtube-hover.svg");
+}
+
+/* PICTURE HEADER */
+.picture-header-presse, .picture-header-reserver, .picture-header-concept, .picture-header-devenir-franchise, .picture-header-contact{
+    height: 493px;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: center;
+}
+.picture-header-presse{
+    background-image: url(../images/wood-3157395__480.jpg);
+}
+.picture-header-concept{
+    background-image: url(../images/Capture.PNG);
+}
+.picture-header-reserver{
+    background-image: url(../images/paula-vermeulen-383310-unsplash.jpg);
+}
+.picture-header-devenir-franchise{
+    background-image: url(../images/restaurant-et-bar.jpg);
+}
+.picture-header-contact{
+    background-image: url(../images/jakob-owens-518866-unsplash.jpg);
 }
 
 
